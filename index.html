@@ -138,70 +138,7 @@
               </div>
             </div>
             <div class="screen-map">
-              <svg class="map-svg" viewBox="0 0 248 145" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" style="background:#141517;">
-                <defs>
-                  <filter id="neonGlow" x="-50%" y="-50%" width="200%" height="200%">
-                    <feGaussianBlur stdDeviation="2.5" result="blur" />
-                    <feMerge>
-                      <feMergeNode in="blur" />
-                      <feMergeNode in="SourceGraphic" />
-                    </feMerge>
-                  </filter>
-                  <pattern id="gridPattern" x="0" y="0" width="60" height="60" patternUnits="userSpaceOnUse">
-                    <rect x="5" y="5" width="50" height="50" fill="#1b1e24" stroke="#252830" stroke-width="1.5" rx="4"/>
-                  </pattern>
-                </defs>
-
-                <g transform="translate(124, 72) rotate(-15) translate(-124, -72)">
-                  <!-- Infinite Grid -->
-                  <rect x="-500" y="-500" width="1000" height="1000" fill="url(#gridPattern)"/>
-
-                  <!-- Delivery Path (Aligned to 60px grid) -->
-                  <!-- Origin: 180, 0 | Mid: 120, 0 | Mid: 120, 60 | Mid: 60, 60 | End: 60, 120 -->
-                  <path id="baseRoute" d="M 180 0 L 120 0 L 120 60 L 60 60 L 60 120" fill="none" stroke="#00f3ff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" filter="url(#neonGlow)"/>
-                  <path d="M 180 0 L 120 0 L 120 60 L 60 60 L 60 120" fill="none" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-
-                  <!-- Animated drawing line -->
-                  <path d="M 180 0 L 120 0 L 120 60 L 60 60 L 60 120" fill="none" stroke="#00f3ff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" filter="url(#neonGlow)" stroke-dasharray="300" stroke-dashoffset="300">
-                    <animate attributeName="stroke-dashoffset" from="300" to="0" dur="2s" fill="freeze" begin="0.5s"/>
-                  </path>
-                  <path d="M 180 0 L 120 0 L 120 60 L 60 60 L 60 120" fill="none" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="300" stroke-dashoffset="300">
-                    <animate attributeName="stroke-dashoffset" from="300" to="0" dur="2s" fill="freeze" begin="0.5s"/>
-                  </path>
-
-                  <!-- Origin Pin (Restaurant) -->
-                  <g transform="translate(180, 0) rotate(15)">
-                    <path d="M-6,-4 L-6,4 L6,4 L6,-4 Z" fill="#FF6B35"/>
-                    <path d="M-7,-4 L7,-4 L5,-8 L-5,-8 Z" fill="#FF8C61"/>
-                    <rect x="-2" y="0" width="4" height="4" fill="#1b1e24"/>
-                    <circle cx="0" cy="5" r="8" fill="#FF6B35" opacity="0.2">
-                      <animate attributeName="r" values="8;14;8" dur="2s" repeatCount="indefinite"/>
-                      <animate attributeName="opacity" values="0.2;0;0.2" dur="2s" repeatCount="indefinite"/>
-                    </circle>
-                  </g>
-
-                  <!-- Destination Pin (User) -->
-                  <g transform="translate(60, 120) rotate(15)">
-                    <path d="M0,-14 C-5,-14 -9,-10 -9,-5 C-9,2 0,9 0,9 C0,9 9,2 9,-5 C9,-10 5,-14 0,-14 Z" fill="#00C9A7"/>
-                    <circle cx="0" cy="-6" r="3" fill="white"/>
-                    <circle cx="0" cy="2" r="8" fill="#00C9A7" opacity="0.2">
-                      <animate attributeName="r" values="8;14;8" dur="2.5s" repeatCount="indefinite"/>
-                      <animate attributeName="opacity" values="0.2;0;0.2" dur="2.5s" repeatCount="indefinite"/>
-                    </circle>
-                  </g>
-
-                  <!-- Animated Rider -->
-                  <g>
-                    <animateMotion dur="3s" repeatCount="indefinite" begin="2.5s">
-                      <mpath href="#baseRoute"/>
-                    </animateMotion>
-                    <g transform="rotate(15)">
-                      <circle r="4" fill="#00f3ff" filter="url(#neonGlow)"/>
-                      <circle r="2.5" fill="white"/>
-                    </g>
-                  </g>
-                </g>
-              </svg>
+              <img src="hero.png" alt="Rebelote Map" class="map-img">
             </div>
             <div class="screen-status">
               <div class="status-dot"></div>
