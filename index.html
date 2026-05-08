@@ -139,11 +139,145 @@
               </div>
             </div>
             <div class="screen-map">
-              <div class="map-grid"></div>
-              <div class="map-pin pin-a">📍</div>
-              <div class="map-pin pin-b">🏠</div>
-              <div class="map-rider">🛵</div>
-              <div class="map-route"></div>
+              <svg class="map-svg" viewBox="0 0 248 145" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+                <!-- Map base -->
+                <rect width="248" height="145" fill="#141c2e"/>
+
+                <!-- City blocks background fills -->
+                <rect x="0" y="0" width="38" height="28" fill="#1a2438" rx="1"/>
+                <rect x="42" y="0" width="50" height="28" fill="#192236" rx="1"/>
+                <rect x="96" y="0" width="40" height="28" fill="#1c2640" rx="1"/>
+                <rect x="140" y="0" width="55" height="28" fill="#1a2438" rx="1"/>
+                <rect x="199" y="0" width="49" height="28" fill="#192236" rx="1"/>
+
+                <rect x="0" y="32" width="38" height="34" fill="#1c2640" rx="1"/>
+                <rect x="42" y="32" width="50" height="34" fill="#1a2438" rx="1"/>
+                <rect x="96" y="32" width="40" height="34" fill="#192236" rx="1"/>
+                <rect x="140" y="32" width="55" height="34" fill="#1c2640" rx="1"/>
+                <rect x="199" y="32" width="49" height="34" fill="#1a2438" rx="1"/>
+
+                <rect x="0" y="70" width="38" height="38" fill="#192236" rx="1"/>
+                <rect x="42" y="70" width="50" height="38" fill="#1c2640" rx="1"/>
+                <rect x="96" y="70" width="40" height="38" fill="#1a2438" rx="1"/>
+                <rect x="140" y="70" width="55" height="38" fill="#192236" rx="1"/>
+                <rect x="199" y="70" width="49" height="38" fill="#1c2640" rx="1"/>
+
+                <rect x="0" y="112" width="38" height="33" fill="#1c2640" rx="1"/>
+                <rect x="42" y="112" width="50" height="33" fill="#1a2438" rx="1"/>
+                <rect x="96" y="112" width="40" height="33" fill="#192236" rx="1"/>
+                <rect x="140" y="112" width="55" height="33" fill="#1c2640" rx="1"/>
+                <rect x="199" y="112" width="49" height="33" fill="#1a2438" rx="1"/>
+
+                <!-- Main roads (horizontal) -->
+                <rect x="0" y="28" width="248" height="4" fill="#1f2d47"/>
+                <rect x="0" y="66" width="248" height="4" fill="#1f2d47"/>
+                <rect x="0" y="108" width="248" height="4" fill="#1f2d47"/>
+
+                <!-- Main roads (vertical) -->
+                <rect x="38" y="0" width="4" height="145" fill="#1f2d47"/>
+                <rect x="92" y="0" width="4" height="145" fill="#1f2d47"/>
+                <rect x="136" y="0" width="4" height="145" fill="#1f2d47"/>
+                <rect x="195" y="0" width="4" height="145" fill="#1f2d47"/>
+
+                <!-- Road center lines (horizontal dashes) -->
+                <line x1="0" y1="30" x2="248" y2="30" stroke="#2a3d5a" stroke-width="0.5" stroke-dasharray="6,5"/>
+                <line x1="0" y1="68" x2="248" y2="68" stroke="#2a3d5a" stroke-width="0.5" stroke-dasharray="6,5"/>
+                <line x1="0" y1="110" x2="248" y2="110" stroke="#2a3d5a" stroke-width="0.5" stroke-dasharray="6,5"/>
+
+                <!-- Road center lines (vertical dashes) -->
+                <line x1="40" y1="0" x2="40" y2="145" stroke="#2a3d5a" stroke-width="0.5" stroke-dasharray="6,5"/>
+                <line x1="94" y1="0" x2="94" y2="145" stroke="#2a3d5a" stroke-width="0.5" stroke-dasharray="6,5"/>
+                <line x1="138" y1="0" x2="138" y2="145" stroke="#2a3d5a" stroke-width="0.5" stroke-dasharray="6,5"/>
+                <line x1="197" y1="0" x2="197" y2="145" stroke="#2a3d5a" stroke-width="0.5" stroke-dasharray="6,5"/>
+
+                <!-- Small building details -->
+                <rect x="5" y="4" width="14" height="10" fill="#243050" rx="1"/>
+                <rect x="22" y="4" width="12" height="8" fill="#1e2a42" rx="1"/>
+                <rect x="47" y="4" width="18" height="12" fill="#243050" rx="1"/>
+                <rect x="70" y="5" width="16" height="9" fill="#1e2a42" rx="1"/>
+                <rect x="100" y="4" width="14" height="11" fill="#243050" rx="1"/>
+                <rect x="118" y="4" width="14" height="8" fill="#1e2a42" rx="1"/>
+                <rect x="145" y="4" width="20" height="13" fill="#243050" rx="1"/>
+                <rect x="170" y="5" width="18" height="9" fill="#1e2a42" rx="1"/>
+                <rect x="203" y="4" width="16" height="11" fill="#243050" rx="1"/>
+                <rect x="224" y="4" width="18" height="9" fill="#1e2a42" rx="1"/>
+
+                <rect x="5" y="36" width="18" height="14" fill="#1e2a42" rx="1"/>
+                <rect x="27" y="37" width="8" height="10" fill="#243050" rx="1"/>
+                <rect x="47" y="36" width="22" height="16" fill="#243050" rx="1"/>
+                <rect x="73" y="37" width="15" height="11" fill="#1e2a42" rx="1"/>
+                <rect x="100" y="36" width="14" height="13" fill="#1e2a42" rx="1"/>
+                <rect x="118" y="37" width="13" height="9" fill="#243050" rx="1"/>
+                <rect x="145" y="36" width="22" height="14" fill="#243050" rx="1"/>
+                <rect x="172" y="37" width="16" height="10" fill="#1e2a42" rx="1"/>
+                <rect x="203" y="36" width="14" height="12" fill="#243050" rx="1"/>
+                <rect x="223" y="37" width="19" height="9" fill="#1e2a42" rx="1"/>
+
+                <rect x="5" y="75" width="16" height="13" fill="#243050" rx="1"/>
+                <rect x="25" y="76" width="10" height="10" fill="#1e2a42" rx="1"/>
+                <rect x="47" y="74" width="20" height="15" fill="#1e2a42" rx="1"/>
+                <rect x="71" y="75" width="17" height="11" fill="#243050" rx="1"/>
+                <rect x="100" y="74" width="12" height="12" fill="#243050" rx="1"/>
+                <rect x="116" y="75" width="16" height="9" fill="#1e2a42" rx="1"/>
+                <rect x="145" y="74" width="20" height="14" fill="#1e2a42" rx="1"/>
+                <rect x="169" y="75" width="18" height="10" fill="#243050" rx="1"/>
+                <rect x="203" y="74" width="16" height="13" fill="#243050" rx="1"/>
+                <rect x="224" y="75" width="18" height="10" fill="#1e2a42" rx="1"/>
+
+                <!-- Route path: origin (40,88) → (40,68) → (94,68) → (94,30) → (138,30) → destination (138,15) -->
+                <path d="M 40 88 L 40 68 L 94 68 L 94 30 L 138 30 L 138 15"
+                  fill="none"
+                  stroke="rgba(108,58,255,0.25)"
+                  stroke-width="3"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"/>
+                <path d="M 40 88 L 40 68 L 94 68 L 94 30 L 138 30 L 138 15"
+                  fill="none"
+                  stroke="url(#routeGrad)"
+                  stroke-width="3"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-dasharray="120"
+                  stroke-dashoffset="120">
+                  <animate attributeName="stroke-dashoffset" from="120" to="0" dur="2s" fill="freeze" begin="0.5s"/>
+                </path>
+
+                <!-- Destination pin (restaurant) -->
+                <circle cx="138" cy="15" r="6" fill="#FF6B35" opacity="0.2">
+                  <animate attributeName="r" values="6;10;6" dur="2s" repeatCount="indefinite"/>
+                  <animate attributeName="opacity" values="0.2;0.0;0.2" dur="2s" repeatCount="indefinite"/>
+                </circle>
+                <circle cx="138" cy="15" r="5" fill="#FF6B35"/>
+                <text x="138" y="18.5" text-anchor="middle" font-size="5.5" fill="white">🍽</text>
+
+                <!-- Origin pin (user) -->
+                <circle cx="40" cy="88" r="6" fill="#6C3AFF" opacity="0.2">
+                  <animate attributeName="r" values="6;10;6" dur="2.5s" repeatCount="indefinite"/>
+                  <animate attributeName="opacity" values="0.2;0.0;0.2" dur="2.5s" repeatCount="indefinite"/>
+                </circle>
+                <circle cx="40" cy="88" r="5" fill="#6C3AFF"/>
+                <text x="40" y="91" text-anchor="middle" font-size="5" fill="white">📍</text>
+
+                <!-- Animated rider dot along the route -->
+                <circle r="5" fill="#00C9A7">
+                  <animateMotion dur="3s" repeatCount="indefinite" begin="2.5s">
+                    <mpath href="#riderPath"/>
+                  </animateMotion>
+                </circle>
+                <circle r="3" fill="white" opacity="0.9">
+                  <animateMotion dur="3s" repeatCount="indefinite" begin="2.5s">
+                    <mpath href="#riderPath"/>
+                  </animateMotion>
+                </circle>
+                <path id="riderPath" d="M 40 88 L 40 68 L 94 68 L 94 30 L 138 30 L 138 15" fill="none"/>
+
+                <defs>
+                  <linearGradient id="routeGrad" x1="0" y1="1" x2="0" y2="0" gradientUnits="objectBoundingBox">
+                    <stop offset="0%" stop-color="#6C3AFF"/>
+                    <stop offset="100%" stop-color="#00C9A7"/>
+                  </linearGradient>
+                </defs>
+              </svg>
             </div>
             <div class="screen-status">
               <div class="status-dot"></div>
@@ -229,21 +363,45 @@
   <section class="coverage" id="coverage">
     <div class="section-inner">
       <div class="section-label">Where We Operate</div>
-      <h2 class="section-title">Across <span class="gradient-text">Tunisia</span></h2>
-      <p class="section-subtitle">We're launching in major cities and expanding fast.</p>
+      <h2 class="section-title">Starting in the <span class="gradient-text">South</span></h2>
+      <p class="section-subtitle">Rebelote is officially sponsored and launching first in the south of Tunisia — expanding to more cities soon.</p>
+
+      <div class="launch-cities-label">🚀 Official Launch Cities</div>
+      <div class="cities-primary">
+        <div class="city-card-primary">
+          <div class="city-card-icon">🏜️</div>
+          <div class="city-card-name">Tataouine</div>
+          <div class="city-card-badge">Sponsored</div>
+        </div>
+        <div class="city-card-primary">
+          <div class="city-card-icon">🏙️</div>
+          <div class="city-card-name">Médenine</div>
+          <div class="city-card-badge">Sponsored</div>
+        </div>
+        <div class="city-card-primary">
+          <div class="city-card-icon">🏝️</div>
+          <div class="city-card-name">Jerba</div>
+          <div class="city-card-badge">Sponsored</div>
+        </div>
+        <div class="city-card-primary">
+          <div class="city-card-icon">🌴</div>
+          <div class="city-card-name">Gabès</div>
+          <div class="city-card-badge">Sponsored</div>
+        </div>
+      </div>
+
+      <div class="launch-cities-label soon-label">📍 Expanding Soon</div>
       <div class="cities-grid">
-        <div class="city-chip active">🏙️ Tunis</div>
-        <div class="city-chip active">🌊 Sfax</div>
-        <div class="city-chip active">🌿 Sousse</div>
-        <div class="city-chip active">⚓ Bizerte</div>
-        <div class="city-chip active">🏛️ Monastir</div>
-        <div class="city-chip active">🌴 Gabès</div>
-        <div class="city-chip active">🏖️ Nabeul</div>
-        <div class="city-chip active">🌺 Kairouan</div>
-        <div class="city-chip soon">🔜 Gafsa</div>
-        <div class="city-chip soon">🔜 Médenine</div>
-        <div class="city-chip soon">🔜 Béja</div>
-        <div class="city-chip soon">🔜 More cities…</div>
+        <div class="city-chip soon">🏙️ Tunis</div>
+        <div class="city-chip soon">🌊 Sfax</div>
+        <div class="city-chip soon">🌿 Sousse</div>
+        <div class="city-chip soon">🏖️ Nabeul</div>
+        <div class="city-chip soon">⚓ Bizerte</div>
+        <div class="city-chip soon">🏛️ Monastir</div>
+        <div class="city-chip soon">🌺 Kairouan</div>
+        <div class="city-chip soon">🏔️ Gafsa</div>
+        <div class="city-chip soon">🏡 Béja</div>
+        <div class="city-chip soon">✨ More cities…</div>
       </div>
     </div>
   </section>
@@ -302,8 +460,13 @@
               <span class="btn-icon">→</span>
             </button>
           </div>
+          <!-- Honeypot spam protection for Web3Forms -->
+          <input type="checkbox" name="botcheck" style="display:none" />
           <div class="form-success" id="form-success">
             <span>🎉</span> You're on the list! We'll reach out soon.
+          </div>
+          <div class="form-error" id="form-error">
+            <span>⚠️</span> Something went wrong. Please try again or email us at <a href="mailto:support@myplace.tn">support@myplace.tn</a>
           </div>
         </form>
         <p class="privacy-note">No spam. Unsubscribe anytime.</p>
