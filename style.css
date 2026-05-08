@@ -325,6 +325,7 @@ body {
 
 .phone-frame {
   width: 280px;
+  height: 580px;
   background: #10141F;
   border-radius: 44px;
   border: 2px solid rgba(255,255,255,0.1);
@@ -335,6 +336,8 @@ body {
   overflow: hidden;
   position: relative;
   z-index: 2;
+  display: flex;
+  flex-direction: column;
 }
 
 /* Notch */
@@ -352,11 +355,12 @@ body {
 }
 
 .phone-screen {
+  flex: 1;
   padding: 10px 16px 20px;
-  min-height: 520px;
   display: flex;
   flex-direction: column;
   gap: 12px;
+  overflow: hidden;
 }
 
 .screen-header { }
