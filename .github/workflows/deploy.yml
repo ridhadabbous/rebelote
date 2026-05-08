@@ -25,6 +25,30 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Verify secret is set
+        run: |
+          if [ -z "${{ secrets.WEB3FORMS_KEY }}" ]; then
+            echo "❌ ERROR: WEB3FORMS_KEY secret is NOT set in repository secrets."
+            echo "Go to: Settings → Secrets and variables → Actions → New repository secret"
+            exit 1
+          else
+            echo "✅ WEB3FORMS_KEY secret is present."
+          fi
+
+      - name: Inject Web3Forms key into main.js
+        run: |
+          echo "📂 Current directory: $(pwd)"
+          echo "📄 Files: $(ls)"
+          # Perform replacement
+          sed -i 's|__WEB3FORMS_KEY__|${{ secrets.WEB3FORMS_KEY }}|g' main.js
+          # Verify placeholder is gone
+          if grep -q '__WEB3FORMS_KEY__' main.js; then
+            echo "❌ ERROR: Placeholder was NOT replaced in main.js!"
+            exit 1
+          else
+            echo "✅ Key injected successfully into main.js"
+          fi
+
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
