@@ -486,58 +486,71 @@ section { position: relative; z-index: 1; }
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  padding: 32px 28px;
-  transition: transform 0.3s, background 0.3s, border-color 0.3s, box-shadow 0.3s;
+  padding: 36px 30px;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), background 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
   cursor: default;
+  position: relative;
+  overflow: hidden;
+}
+
+.service-block::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--c1, var(--violet)), transparent);
+  opacity: 0;
+  transition: opacity 0.4s ease;
 }
 
 .service-block:hover {
-  transform: translateY(-6px);
+  transform: translateY(-8px);
   background: var(--surface-hover);
-  border-color: rgba(255,255,255,0.14);
-  box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+  border-color: rgba(255,255,255,0.12);
+  box-shadow: 0 24px 56px rgba(0,0,0,0.4);
+}
+
+.service-block:hover::before {
+  opacity: 1;
 }
 
 .service-icon-wrap {
-  width: 56px; height: 56px;
-  border-radius: 16px;
+  width: 60px; height: 60px;
+  border-radius: 18px;
   background: linear-gradient(135deg, var(--c1), var(--c2));
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.6rem;
-  margin-bottom: 20px;
+  font-size: 1.8rem;
+  margin-bottom: 24px;
   box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+}
+
+.service-tag {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--c1);
+  margin-bottom: 8px;
 }
 
 .service-block h3 {
   font-family: 'Outfit', sans-serif;
-  font-size: 1.25rem;
+  font-size: 1.35rem;
   font-weight: 800;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
   color: var(--text);
 }
 
 .service-block > p {
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   color: var(--text-muted);
-  line-height: 1.65;
-  margin-bottom: 18px;
-}
-
-.feature-list {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 7px;
-}
-
-.feature-list li {
-  font-size: 0.85rem;
-  color: var(--text-muted);
-  display: flex;
-  align-items: center;
-  gap: 8px;
+  line-height: 1.6;
+  margin-bottom: 0;
+  flex-grow: 1;
 }
 
 /* ===========================
