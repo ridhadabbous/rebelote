@@ -8,69 +8,70 @@ let particles = [];
 let animFrameId;
 
 if (canvas && ctx) {
-  canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
-}
-
-function createParticles() {
-  particles = [];
-  const count = Math.floor((canvas.width * canvas.height) / 18000);
-  for (let i = 0; i < count; i++) {
-    particles.push({
-      x: Math.random() * canvas.width,
-      y: Math.random() * canvas.height,
-      r: Math.random() * 1.5 + 0.3,
-      vx: (Math.random() - 0.5) * 0.25,
-      vy: (Math.random() - 0.5) * 0.25,
-      alpha: Math.random() * 0.5 + 0.1,
-      color: Math.random() > 0.5 ? '124,58,237' : '245,158,11',
-    });
+  function resizeCanvas() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
   }
-}
 
-function drawParticles() {
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-  // Draw connection lines
-  for (let i = 0; i < particles.length; i++) {
-    for (let j = i + 1; j < particles.length; j++) {
-      const dx = particles[i].x - particles[j].x;
-      const dy = particles[i].y - particles[j].y;
-      const dist = Math.sqrt(dx * dx + dy * dy);
-      if (dist < 130) {
-        const opacity = (1 - dist / 130) * 0.12;
-        ctx.beginPath();
-        ctx.strokeStyle = `rgba(124,58,237,${opacity})`;
-        ctx.lineWidth = 0.5;
-        ctx.moveTo(particles[i].x, particles[i].y);
-        ctx.lineTo(particles[j].x, particles[j].y);
-        ctx.stroke();
-      }
+  function createParticles() {
+    particles = [];
+    const count = Math.floor((canvas.width * canvas.height) / 18000);
+    for (let i = 0; i < count; i++) {
+      particles.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        r: Math.random() * 1.5 + 0.3,
+        vx: (Math.random() - 0.5) * 0.25,
+        vy: (Math.random() - 0.5) * 0.25,
+        alpha: Math.random() * 0.5 + 0.1,
+        color: Math.random() > 0.5 ? '124,58,237' : '245,158,11',
+      });
     }
   }
 
-  // Draw particles
-  for (const p of particles) {
-    ctx.beginPath();
-    ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-    ctx.fillStyle = `rgba(${p.color},${p.alpha})`;
-    ctx.fill();
+  function drawParticles() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-    p.x += p.vx;
-    p.y += p.vy;
+    // Draw connection lines
+    for (let i = 0; i < particles.length; i++) {
+      for (let j = i + 1; j < particles.length; j++) {
+        const dx = particles[i].x - particles[j].x;
+        const dy = particles[i].y - particles[j].y;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+        if (dist < 130) {
+          const opacity = (1 - dist / 130) * 0.12;
+          ctx.beginPath();
+          ctx.strokeStyle = `rgba(124,58,237,${opacity})`;
+          ctx.lineWidth = 0.5;
+          ctx.moveTo(particles[i].x, particles[i].y);
+          ctx.lineTo(particles[j].x, particles[j].y);
+          ctx.stroke();
+        }
+      }
+    }
 
-    if (p.x < 0) p.x = canvas.width;
-    if (p.x > canvas.width) p.x = 0;
-    if (p.y < 0) p.y = canvas.height;
-    if (p.y > canvas.height) p.y = 0;
+    // Draw particles
+    for (const p of particles) {
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(${p.color},${p.alpha})`;
+      ctx.fill();
+
+      p.x += p.vx;
+      p.y += p.vy;
+
+      if (p.x < 0) p.x = canvas.width;
+      if (p.x > canvas.width) p.x = 0;
+      if (p.y < 0) p.y = canvas.height;
+      if (p.y > canvas.height) p.y = 0;
+    }
+
+    animFrameId = requestAnimationFrame(drawParticles);
   }
 
-  animFrameId = requestAnimationFrame(drawParticles);
-}
-
-resizeCanvas();
-createParticles();
-drawParticles();
+  resizeCanvas();
+  createParticles();
+  drawParticles();
 
   window.addEventListener('resize', () => {
     cancelAnimationFrame(animFrameId);
