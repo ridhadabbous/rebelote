@@ -7,26 +7,34 @@ let circleInstance = null;
 let capturedLocation = null;
 
 /**
- * Initializes a Leaflet Map if the page has a map container.
- * @param {boolean} requireRadius - Whether to show a working radius instead of just a pin.
+ * Initializes a Leaflet Map defaulting to Tunis, Tunisia.
+ * @param {boolean} requireRadius - Whether to show a working radius circle.
  */
 function initMap(requireRadius = false) {
   const mapEl = document.getElementById('map');
   if (!mapEl) return;
 
-  // Default to a central location (e.g., Tunis, Tunisia)
+  // Default to Tunis, Tunisia
   const defaultLocation = [36.8065, 10.1815];
 
-  mapInstance = L.map('map').setView(defaultLocation, 12);
+  mapInstance = L.map('map', {
+    center: defaultLocation,
+    zoom: 12,
+    zoomControl: true,
+  });
 
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '&copy; OpenStreetMap contributors'
+    attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+    maxZoom: 18,
   }).addTo(mapInstance);
+
+  // Force render after container is visible
+  setTimeout(() => mapInstance.invalidateSize(), 300);
 
   mapInstance.on('click', function(e) {
     const lat = e.latlng.lat;
     const lng = e.latlng.lng;
-    capturedLocation = { lat, lng };
+    capturedLocation = { lat: lat.toFixed(6), lng: lng.toFixed(6) };
 
     if (markerInstance) {
       markerInstance.setLatLng(e.latlng);
@@ -39,10 +47,10 @@ function initMap(requireRadius = false) {
         circleInstance.setLatLng(e.latlng);
       } else {
         circleInstance = L.circle(e.latlng, {
-          color: '#6C3AFF',
-          fillColor: '#6C3AFF',
-          fillOpacity: 0.2,
-          radius: 5000 // 5km default working radius
+          color: '#7C3AED',
+          fillColor: '#7C3AED',
+          fillOpacity: 0.15,
+          radius: 5000
         }).addTo(mapInstance);
       }
       capturedLocation.radius_km = 5;
