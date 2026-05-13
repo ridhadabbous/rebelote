@@ -23,7 +23,7 @@ function createParticles() {
       vx: (Math.random() - 0.5) * 0.25,
       vy: (Math.random() - 0.5) * 0.25,
       alpha: Math.random() * 0.5 + 0.1,
-      color: Math.random() > 0.5 ? '108,58,255' : '255,107,53',
+      color: Math.random() > 0.5 ? '124,58,237' : '245,158,11',
     });
   }
 }
@@ -40,7 +40,7 @@ function drawParticles() {
       if (dist < 130) {
         const opacity = (1 - dist / 130) * 0.12;
         ctx.beginPath();
-        ctx.strokeStyle = `rgba(108,58,255,${opacity})`;
+        ctx.strokeStyle = `rgba(124,58,237,${opacity})`;
         ctx.lineWidth = 0.5;
         ctx.moveTo(particles[i].x, particles[i].y);
         ctx.lineTo(particles[j].x, particles[j].y);
@@ -253,7 +253,7 @@ glow.style.cssText = `
   width: 320px;
   height: 320px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(108,58,255,0.07) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(124,58,237,0.07) 0%, transparent 70%);
   pointer-events: none;
   z-index: 0;
   transform: translate(-50%, -50%);
