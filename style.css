@@ -597,6 +597,13 @@ section { position: relative; z-index: 1; }
 }
 .pre-prod-btn:hover { transform: translateY(-4px); background: var(--surface-hover); }
 .pp-icon { font-size: 1.5rem; flex-shrink: 0; }
+.pp-img {
+  width: 44px;
+  height: 44px;
+  object-fit: cover;
+  border-radius: 10px;
+  flex-shrink: 0;
+}
 .pp-text { font-size: 0.95rem; font-weight: 600; }
 .pp-sub { font-size: 0.78rem; color: var(--text-faint); margin-top: 2px; }
 .pre-prod-btn.delivery:hover { border-color: var(--teal); box-shadow: 0 8px 24px rgba(16,185,129,0.2); }
