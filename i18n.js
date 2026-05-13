@@ -125,7 +125,12 @@ const translations = {
     "rp_b3_d": "A dedicated tablet app to manage your menu, accept orders, and track your business growth.",
     "rp_form_title": "Register your Store",
     "rp_store_name": "Store Name",
-    "rp_store_addr": "Store Address"
+    "rp_store_addr": "Store Address",
+
+    // Modal
+    "modal_success_title": "Success!",
+    "modal_success_desc": "Registration successful! We will review your account information and reach out to you soon.",
+    "modal_btn": "Close"
   },
   ar: {
     // Navbar
@@ -253,7 +258,12 @@ const translations = {
     "rp_b3_d": "تطبيق مخصص للوحة الإلكترونية للتحكم في الطلبات.",
     "rp_form_title": "سجل المحل الخاص بك",
     "rp_store_name": "اسم المحل",
-    "rp_store_addr": "عنوان المحل"
+    "rp_store_addr": "عنوان المحل",
+
+    // Modal
+    "modal_success_title": "تم بنجاح!",
+    "modal_success_desc": "تم التسجيل بنجاح! سنقوم بمراجعة معلومات حسابك وسنتواصل معك قريباً.",
+    "modal_btn": "إغلاق"
   }
 };
 
