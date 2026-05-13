@@ -1,6 +1,3 @@
-// Web3Forms API Key (Same as main.js)
-const WEB3FORMS_KEY = '__WEB3FORMS_KEY__';
-
 let mapInstance = null;
 let markerInstance = null;
 let circleInstance = null;

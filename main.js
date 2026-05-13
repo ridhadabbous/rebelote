@@ -2,12 +2,12 @@
    ANIMATED BACKGROUND CANVAS
 =========================== */
 const canvas = document.getElementById('bg-canvas');
-const ctx = canvas.getContext('2d');
+const ctx = canvas ? canvas.getContext('2d') : null;
 
 let particles = [];
 let animFrameId;
 
-function resizeCanvas() {
+if (canvas && ctx) {
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
 }
@@ -72,12 +72,14 @@ resizeCanvas();
 createParticles();
 drawParticles();
 
-window.addEventListener('resize', () => {
-  cancelAnimationFrame(animFrameId);
-  resizeCanvas();
-  createParticles();
-  drawParticles();
-});
+  window.addEventListener('resize', () => {
+    cancelAnimationFrame(animFrameId);
+    resizeCanvas();
+    createParticles();
+    drawParticles();
+  });
+}
+
 
 /* ===========================
    NAVBAR SCROLL EFFECT
