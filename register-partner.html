@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Partner Registration | Rebelote Pre-Production</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  
+  <!-- Leaflet CSS for Map -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+  
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="register.css" />
+</head>
+<body>
+  <!-- Animated background canvas -->
+  <canvas id="bg-canvas"></canvas>
+
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <div class="logo-mark">
+          <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
+            <circle cx="18" cy="18" r="18" fill="url(#logoGrad)"/>
+            <path d="M11 10h6.5a6.5 6.5 0 010 13H11V10z" fill="white" opacity="0.95"/>
+            <path d="M17.5 23H25l-4 7h-3.5v-7z" fill="white" opacity="0.7"/>
+            <defs>
+              <linearGradient id="logoGrad" x1="0" y1="0" x2="36" y2="36">
+                <stop offset="0%" stop-color="#6C3AFF"/>
+                <stop offset="100%" stop-color="#FF6B35"/>
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+        <div class="logo-text">
+          <span class="logo-brand">MyPlace</span>
+        </div>
+      </a>
+    </div>
+  </nav>
+
+  <div class="register-page">
+    <div class="register-container">
+      <a href="index.html" class="back-link">← Back to Home</a>
+      <div class="register-header">
+        <h1>Partner Registration 🏪</h1>
+        <p>Register your store or restaurant for our global launch.</p>
+      </div>
+
+      <form class="register-form" onsubmit="handleRegistration(event, 'Partner')">
+        <div class="form-group">
+          <label for="store_name">Store / Restaurant Name</label>
+          <input type="text" id="store_name" name="store_name" required placeholder="e.g. Burger Place">
+        </div>
+        <div class="form-group">
+          <label for="category">Category</label>
+          <select id="category" name="category" required>
+            <option value="" disabled selected>Select a category...</option>
+            <option value="Food">Food / Restaurant</option>
+            <option value="Grocery">Grocery / Supermarket</option>
+            <option value="Retail">Retail / Shop</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="owner_name">Owner / Contact Name</label>
+          <input type="text" id="owner_name" name="owner_name" required placeholder="Jane Doe">
+        </div>
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" required placeholder="jane@example.com">
+        </div>
+        <div class="form-group">
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" name="phone" required placeholder="+216 12 345 678">
+        </div>
+        
+        <div class="form-group">
+          <label>Store Location</label>
+          <p class="map-instruction">Click on the map to drop a pin exactly where your store is located.</p>
+          <div id="map" class="map-container"></div>
+        </div>
+        
+        <!-- Honeypot -->
+        <input type="checkbox" name="botcheck" style="display:none" />
+        
+        <button type="submit" class="submit-btn">Submit Registration</button>
+        <div id="form-message" class="form-message"></div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  
+  <script src="main.js"></script>
+  <script src="register.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      initMap(false); // false = no radius, just a pin
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,127 @@
+// Web3Forms API Key (Same as main.js)
+const WEB3FORMS_KEY = '__WEB3FORMS_KEY__';
+
+let mapInstance = null;
+let markerInstance = null;
+let circleInstance = null;
+let capturedLocation = null;
+
+/**
+ * Initializes a Leaflet Map if the page has a map container.
+ * @param {boolean} requireRadius - Whether to show a working radius instead of just a pin.
+ */
+function initMap(requireRadius = false) {
+  const mapEl = document.getElementById('map');
+  if (!mapEl) return;
+
+  // Default to a central location (e.g., Tunis, Tunisia)
+  const defaultLocation = [36.8065, 10.1815];
+
+  mapInstance = L.map('map').setView(defaultLocation, 12);
+
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; OpenStreetMap contributors'
+  }).addTo(mapInstance);
+
+  mapInstance.on('click', function(e) {
+    const lat = e.latlng.lat;
+    const lng = e.latlng.lng;
+    capturedLocation = { lat, lng };
+
+    if (markerInstance) {
+      markerInstance.setLatLng(e.latlng);
+    } else {
+      markerInstance = L.marker(e.latlng).addTo(mapInstance);
+    }
+
+    if (requireRadius) {
+      if (circleInstance) {
+        circleInstance.setLatLng(e.latlng);
+      } else {
+        circleInstance = L.circle(e.latlng, {
+          color: '#6C3AFF',
+          fillColor: '#6C3AFF',
+          fillOpacity: 0.2,
+          radius: 5000 // 5km default working radius
+        }).addTo(mapInstance);
+      }
+      capturedLocation.radius_km = 5;
+    }
+  });
+}
+
+/**
+ * Handles form submission and sends JSON payload via Web3Forms
+ */
+async function handleRegistration(event, userType) {
+  event.preventDefault();
+
+  const form = event.target;
+  const submitBtn = form.querySelector('.submit-btn');
+  const messageEl = document.getElementById('form-message');
+
+  submitBtn.disabled = true;
+  submitBtn.textContent = 'Submitting...';
+  messageEl.className = 'form-message';
+  messageEl.style.display = 'none';
+
+  // Gather form data
+  const formData = new FormData(form);
+  const dataObj = {};
+  formData.forEach((value, key) => {
+    dataObj[key] = value;
+  });
+
+  // Attach location if captured
+  if (capturedLocation) {
+    dataObj.location = capturedLocation;
+  } else if (document.getElementById('map')) {
+    // If map exists but no location selected, prompt user
+    messageEl.textContent = 'Please select a location on the map.';
+    messageEl.className = 'form-message error';
+    submitBtn.disabled = false;
+    submitBtn.textContent = 'Submit Registration';
+    return;
+  }
+
+  // Format payload
+  const payload = {
+    access_key: WEB3FORMS_KEY,
+    subject: `🚀 New ${userType} Pre-Production Registration`,
+    from_name: 'Rebelote Registration',
+    replyto: dataObj.email || '',
+    // Send the data directly as JSON string in the message body
+    message: JSON.stringify(dataObj, null, 2),
+    botcheck: ''
+  };
+
+  try {
+    const res = await fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      },
+      body: JSON.stringify(payload)
+    });
+
+    const result = await res.json();
+    if (result.success) {
+      messageEl.textContent = 'Registration successful! We will be in touch soon.';
+      messageEl.className = 'form-message success';
+      form.reset();
+      if (markerInstance) mapInstance.removeLayer(markerInstance);
+      if (circleInstance) mapInstance.removeLayer(circleInstance);
+      capturedLocation = null;
+    } else {
+      throw new Error(result.message || 'Submission failed');
+    }
+  } catch (err) {
+    console.error('Registration Error:', err);
+    messageEl.textContent = 'Something went wrong. Please try again later.';
+    messageEl.className = 'form-message error';
+  } finally {
+    submitBtn.disabled = false;
+    submitBtn.textContent = 'Submit Registration';
+  }
+}

@@ -1,0 +1,200 @@
+/* ===========================
+   PRE-PRODUCTION OPTIONS
+=========================== */
+.pre-prod-options {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.pre-prod-btn {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 16px 20px;
+  text-decoration: none;
+  color: var(--text);
+  font-weight: 600;
+  transition: transform 0.2s, background 0.2s, border-color 0.2s;
+  text-align: left;
+}
+
+.pre-prod-btn:hover {
+  transform: translateY(-4px);
+  background: var(--surface-hover);
+  border-color: rgba(255,255,255,0.2);
+}
+
+.pp-icon { font-size: 1.5rem; }
+.pp-text { font-size: 0.95rem; }
+
+.pre-prod-btn.customer:hover { border-color: var(--violet-light); box-shadow: 0 8px 24px rgba(108,58,255,0.2); }
+.pre-prod-btn.delivery:hover { border-color: var(--teal); box-shadow: 0 8px 24px rgba(0,201,167,0.2); }
+.pre-prod-btn.taxi:hover { border-color: var(--yellow); box-shadow: 0 8px 24px rgba(255,214,0,0.2); }
+.pre-prod-btn.partner:hover { border-color: var(--orange); box-shadow: 0 8px 24px rgba(255,107,53,0.2); }
+
+/* ===========================
+   REGISTRATION PAGES
+=========================== */
+.register-page {
+  padding-top: 100px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.register-container {
+  width: 100%;
+  max-width: 800px;
+  padding: 40px;
+  margin: 40px auto;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+}
+
+.register-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.register-header h1 {
+  font-family: 'Outfit', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+
+.register-header p {
+  color: var(--text-muted);
+  font-size: 1.1rem;
+}
+
+.register-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  text-align: left;
+}
+
+.form-group label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.form-group input, .form-group select {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 14px 16px;
+  color: var(--text);
+  font-size: 1rem;
+  font-family: 'Inter', sans-serif;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.form-group input:focus, .form-group select:focus {
+  outline: none;
+  border-color: var(--violet-light);
+  background: rgba(255,255,255,0.08);
+}
+
+.form-group select option {
+  background: var(--bg2);
+  color: var(--text);
+}
+
+.map-container {
+  height: 300px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  overflow: hidden;
+  margin-top: 8px;
+}
+
+/* Override Leaflet controls for dark theme */
+.leaflet-container {
+  background: #141c2e;
+}
+
+.submit-btn {
+  margin-top: 20px;
+  background: linear-gradient(135deg, var(--violet), var(--orange));
+  color: white;
+  border: none;
+  padding: 16px;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.submit-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(108,58,255,0.4);
+}
+
+.submit-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-muted);
+  text-decoration: none;
+  margin-bottom: 20px;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.back-link:hover {
+  color: var(--text);
+}
+
+/* Feedback messages */
+.form-message {
+  padding: 16px;
+  border-radius: 8px;
+  margin-top: 20px;
+  display: none;
+  font-weight: 500;
+}
+
+.form-message.success {
+  display: block;
+  background: rgba(0,201,167,0.15);
+  border: 1px solid rgba(0,201,167,0.3);
+  color: #00E5C0;
+}
+
+.form-message.error {
+  display: block;
+  background: rgba(255,107,53,0.15);
+  border: 1px solid rgba(255,107,53,0.3);
+  color: #FF9A6C;
+}
+
+/* Map specific instructions */
+.map-instruction {
+  font-size: 0.85rem;
+  color: var(--text-faint);
+  margin-top: 4px;
+}
