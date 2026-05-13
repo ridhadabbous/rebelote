@@ -2,11 +2,11 @@
    DESIGN TOKENS
 =========================== */
 :root {
-  --violet: #6C3AFF;
-  --violet-light: #9B6BFF;
-  --orange: #FF6B35;
-  --orange-light: #FF9A6C;
-  --teal: #00C9A7;
+  --violet: #D4FF00;
+  --violet-light: #E5FF4D;
+  --orange: #A3CC00;
+  --orange-light: #B8E600;
+  --teal: #00E58F;
   --yellow: #FFD600;
   --bg: #080B14;
   --bg2: #0D1120;
@@ -228,7 +228,7 @@ body {
   align-items: center;
   gap: 9px;
   background: linear-gradient(135deg, var(--violet), var(--orange));
-  color: white;
+  color: var(--bg);
   font-weight: 700;
   font-size: 1rem;
   padding: 14px 28px;

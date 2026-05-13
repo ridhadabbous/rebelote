@@ -32,50 +32,127 @@
 .pp-icon { font-size: 1.5rem; }
 .pp-text { font-size: 0.95rem; }
 
-.pre-prod-btn.customer:hover { border-color: var(--violet-light); box-shadow: 0 8px 24px rgba(108,58,255,0.2); }
+.pre-prod-btn.customer:hover { border-color: var(--violet-light); box-shadow: 0 8px 24px rgba(212, 255, 0, 0.2); }
 .pre-prod-btn.delivery:hover { border-color: var(--teal); box-shadow: 0 8px 24px rgba(0,201,167,0.2); }
 .pre-prod-btn.taxi:hover { border-color: var(--yellow); box-shadow: 0 8px 24px rgba(255,214,0,0.2); }
-.pre-prod-btn.partner:hover { border-color: var(--orange); box-shadow: 0 8px 24px rgba(255,107,53,0.2); }
+.pre-prod-btn.partner:hover { border-color: var(--orange); box-shadow: 0 8px 24px rgba(163, 204, 0, 0.2); }
 
 /* ===========================
-   REGISTRATION PAGES
+   PREMIUM REGISTRATION LAYOUT
 =========================== */
-.register-page {
-  padding-top: 100px;
+.premium-layout {
+  display: flex;
   min-height: 100vh;
+  padding-top: 72px; /* height of navbar */
+}
+
+.premium-hero {
+  flex: 1;
+  position: relative;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  justify-content: center;
+  padding: 60px;
+  background-size: cover;
+  background-position: center;
 }
 
-.register-container {
-  width: 100%;
-  max-width: 800px;
-  padding: 40px;
-  margin: 40px auto;
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+.premium-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, rgba(8,11,20,0.95) 0%, rgba(8,11,20,0.6) 100%);
 }
 
-.register-header {
-  text-align: center;
-  margin-bottom: 40px;
+.premium-hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 550px;
 }
 
-.register-header h1 {
+.premium-hero h1 {
   font-family: 'Outfit', sans-serif;
-  font-size: 2.5rem;
-  font-weight: 800;
-  margin-bottom: 10px;
+  font-size: clamp(2.5rem, 4vw, 4rem);
+  font-weight: 900;
+  line-height: 1.1;
+  margin-bottom: 20px;
 }
 
-.register-header p {
+.premium-hero p.hero-sub {
+  font-size: 1.15rem;
   color: var(--text-muted);
-  font-size: 1.1rem;
+  margin-bottom: 40px;
+  line-height: 1.6;
 }
 
+.premium-benefits {
+  display: grid;
+  gap: 24px;
+}
+
+.benefit-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.benefit-icon {
+  width: 44px; height: 44px;
+  background: rgba(212, 255, 0, 0.1);
+  border: 1px solid rgba(212, 255, 0, 0.2);
+  color: var(--violet);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  flex-shrink: 0;
+}
+
+.benefit-text h4 {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.15rem;
+  margin-bottom: 6px;
+  color: var(--text);
+}
+
+.benefit-text p {
+  font-size: 0.95rem;
+  color: var(--text-faint);
+  line-height: 1.5;
+}
+
+.premium-form-side {
+  width: 100%;
+  max-width: 550px;
+  background: var(--bg);
+  padding: 60px 40px;
+  border-left: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+}
+
+.premium-form-side .back-link {
+  margin-bottom: 30px;
+  display: inline-block;
+}
+
+.form-header {
+  margin-bottom: 30px;
+}
+
+.form-header h2 {
+  font-family: 'Outfit', sans-serif;
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+
+.form-header p {
+  color: var(--text-muted);
+}
+
+/* Base Form elements */
 .register-form {
   display: flex;
   flex-direction: column;
@@ -108,7 +185,7 @@
 
 .form-group input:focus, .form-group select:focus {
   outline: none;
-  border-color: var(--violet-light);
+  border-color: var(--violet);
   background: rgba(255,255,255,0.08);
 }
 
@@ -125,7 +202,6 @@
   margin-top: 8px;
 }
 
-/* Override Leaflet controls for dark theme */
 .leaflet-container {
   background: #141c2e;
 }
@@ -133,7 +209,7 @@
 .submit-btn {
   margin-top: 20px;
   background: linear-gradient(135deg, var(--violet), var(--orange));
-  color: white;
+  color: var(--bg);
   border: none;
   padding: 16px;
   border-radius: 8px;
@@ -145,7 +221,7 @@
 
 .submit-btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 10px 30px rgba(108,58,255,0.4);
+  box-shadow: 0 10px 30px rgba(212, 255, 0, 0.3);
 }
 
 .submit-btn:disabled {
@@ -160,7 +236,6 @@
   gap: 8px;
   color: var(--text-muted);
   text-decoration: none;
-  margin-bottom: 20px;
   font-weight: 500;
   transition: color 0.2s;
 }
@@ -192,9 +267,14 @@
   color: #FF9A6C;
 }
 
-/* Map specific instructions */
 .map-instruction {
   font-size: 0.85rem;
   color: var(--text-faint);
   margin-top: 4px;
+}
+
+@media (max-width: 900px) {
+  .premium-layout { flex-direction: column; }
+  .premium-form-side { max-width: 100%; border-left: none; padding: 40px 20px; }
+  .premium-hero { padding: 40px 20px; min-height: 50vh; }
 }
