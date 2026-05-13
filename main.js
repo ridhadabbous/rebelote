@@ -91,6 +91,16 @@ window.addEventListener('scroll', () => {
   }
 }, { passive: true });
 
+/* === HAMBURGER MENU === */
+const hamburger = document.getElementById('nav-hamburger');
+const navMobile = document.getElementById('nav-mobile');
+if (hamburger && navMobile) {
+  hamburger.addEventListener('click', () => {
+    navMobile.classList.toggle('open');
+  });
+}
+
+
 /* ===========================
    INTERSECTION OBSERVER – REVEAL ANIMATIONS
 =========================== */

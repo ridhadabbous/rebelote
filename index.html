@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Rebelote by MyPlace — The Global Super-App</title>
-  <meta name="description" content="Rebelote by MyPlace — food delivery, taxi rides and parcel shipping in one app. Join our pre-production program." />
-  <meta name="keywords" content="Rebelote, MyPlace, super app, food delivery, taxi, shipping" />
-  <meta property="og:title" content="Rebelote — The Global Super-App" />
+  <title>MyPlace — Food, Taxi &amp; Delivery Super-App</title>
+  <meta name="description" content="MyPlace — The global super-app for food delivery, taxi rides and parcel shipping. Join our pre-production program as a driver or partner." />
+  <meta name="keywords" content="MyPlace, super app, food delivery, taxi, shipping, driver, partner" />
+  <meta property="og:title" content="MyPlace — The Global Super-App" />
   <meta property="og:description" content="One app. Every service. Everywhere." />
   <meta property="og:type" content="website" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -35,12 +35,25 @@
             </defs>
           </svg>
         </div>
-        <div class="logo-text"><span class="logo-brand">Rebelote</span></div>
+        <div class="logo-text"><span class="logo-brand">MyPlace</span></div>
       </div>
-      <div class="nav-badge">
-        <span class="badge-dot"></span>
-        Pre-Production
+
+      <!-- Nav links for drivers & partners -->
+      <div class="nav-links" id="nav-links">
+        <a href="register-delivery.html" class="nav-link">🛵 Become a Courier</a>
+        <a href="register-taxi.html" class="nav-link">🚕 Drive with Us</a>
+        <a href="register-partner.html" class="nav-link nav-link-cta">🏪 Partner with Us</a>
       </div>
+
+      <button class="nav-hamburger" id="nav-hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <!-- Mobile dropdown -->
+    <div class="nav-mobile" id="nav-mobile">
+      <a href="register-delivery.html">🛵 Become a Courier</a>
+      <a href="register-taxi.html">🚕 Drive with Us</a>
+      <a href="register-partner.html">🏪 Partner with Us</a>
     </div>
   </nav>
 
@@ -55,34 +68,12 @@
         <span class="gradient-text">Every Service.</span>
       </h1>
       <p class="hero-subtitle">
-        <strong>Rebelote</strong> — food delivery, taxi rides &amp; parcel shipping,<br class="break-lg"/>
+        <strong>MyPlace</strong> — food delivery, taxi rides &amp; parcel shipping,<br class="break-lg"/>
         all in one seamless global experience.
       </p>
 
-      <div class="app-name-reveal">
-        <div class="app-logo-large">
-          <svg width="64" height="64" viewBox="0 0 64 64" fill="none">
-            <rect width="64" height="64" rx="18" fill="url(#lgBig)"/>
-            <path d="M18 16h12a12 12 0 010 24H18V16z" fill="white" opacity="0.95"/>
-            <path d="M30 40H46l-7.5 12H30V40z" fill="white" opacity="0.65"/>
-            <defs>
-              <linearGradient id="lgBig" x1="0" y1="0" x2="64" y2="64">
-                <stop offset="0%" stop-color="#7C3AED"/>
-                <stop offset="100%" stop-color="#5B21B6"/>
-              </linearGradient>
-            </defs>
-          </svg>
-        </div>
-        <div class="app-name-text">
-          <span class="app-title-word">re</span><span class="app-title-word accent">be</span><span class="app-title-word">lote</span>
-        </div>
-        <div>
-          <p class="app-by">by <strong>MyPlace</strong></p>
-        </div>
-      </div>
-
       <div class="cta-group">
-        <a href="#notify" class="btn-primary" id="notify-btn">
+        <a href="#join" class="btn-primary">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 01-3.46 0"/></svg>
           Join Pre-Production
         </a>
@@ -104,40 +95,10 @@
       </div>
     </div>
 
+    <!-- AI-Generated App Mockup -->
     <div class="hero-visual">
-      <div class="phone-mockup">
-        <div class="phone-frame">
-          <div class="phone-screen">
-            <div class="screen-header">
-              <div class="screen-greeting">Good evening 👋</div>
-              <div class="screen-title">What do you need?</div>
-            </div>
-            <div class="screen-cards">
-              <div class="service-card food" id="card-food">
-                <div class="card-icon">🍔</div>
-                <div class="card-label">Food</div>
-                <div class="card-sub">200+ restaurants</div>
-              </div>
-              <div class="service-card taxi" id="card-taxi">
-                <div class="card-icon">🚕</div>
-                <div class="card-label">Taxi</div>
-                <div class="card-sub">Instant ride</div>
-              </div>
-              <div class="service-card ship" id="card-ship">
-                <div class="card-icon">📦</div>
-                <div class="card-label">Shipping</div>
-                <div class="card-sub">Send anywhere</div>
-              </div>
-            </div>
-            <div class="screen-map">
-              <img src="hero.png" alt="Rebelote Map" class="map-img">
-            </div>
-            <div class="screen-status">
-              <div class="status-dot"></div>
-              <span>Tracking your order in real-time</span>
-            </div>
-          </div>
-        </div>
+      <div class="hero-mockup-wrap">
+        <img src="app_mockup.png" alt="MyPlace App" class="hero-mockup-img" />
         <div class="phone-glow"></div>
       </div>
     </div>
@@ -147,16 +108,16 @@
   <div class="stats-bar">
     <div class="stats-inner">
       <div class="stat-item">
+        <div class="stat-number">3</div>
+        <div class="stat-label">Services in One App</div>
+      </div>
+      <div class="stat-item">
         <div class="stat-number">4</div>
         <div class="stat-label">Dedicated Apps</div>
       </div>
       <div class="stat-item">
-        <div class="stat-number">3+</div>
-        <div class="stat-label">Services in One Platform</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-number">0%</div>
-        <div class="stat-label">Platform Fee at Launch</div>
+        <div class="stat-number">Cash</div>
+        <div class="stat-label">Direct Payment to Drivers</div>
       </div>
       <div class="stat-item">
         <div class="stat-number">∞</div>
@@ -169,8 +130,8 @@
   <section class="services" id="services">
     <div class="section-inner">
       <div class="section-label">The Ecosystem</div>
-      <h2 class="section-title">One Platform.<br/><span class="gradient-text">Three Powerful Apps.</span></h2>
-      <p class="section-subtitle">Our global platform connects drivers, partners, and couriers through dedicated, purpose-built applications.</p>
+      <h2 class="section-title">Three Services.<br/><span class="gradient-text">One Platform.</span></h2>
+      <p class="section-subtitle">MyPlace connects customers, partners, couriers and taxi drivers through dedicated, purpose-built applications.</p>
 
       <div class="services-grid">
         <div class="service-block" id="svc-partner">
@@ -179,7 +140,8 @@
           </div>
           <div class="service-tag" style="--c1:#7C3AED">For Businesses</div>
           <h3>Partner App</h3>
-          <p>For restaurants, stores &amp; more. Manage your menu, track orders and grow your business globally with our powerful order dashboard.</p>
+          <p>Restaurants, grocery stores and retail shops. Manage your menu, receive orders and reach thousands of new customers without worrying about delivery logistics.</p>
+          <a href="register-partner.html" class="service-cta">Register your store →</a>
         </div>
 
         <div class="service-block" id="svc-delivery">
@@ -188,7 +150,8 @@
           </div>
           <div class="service-tag" style="--c1:#10B981">For Couriers</div>
           <h3>Delivery App</h3>
-          <p>For delivery heroes. Accept orders, navigate efficiently, and earn more with smart route optimization and daily payouts.</p>
+          <p>Accept delivery orders in your zone, navigate efficiently and collect payment directly from customers in cash. Full control, zero middleman.</p>
+          <a href="register-delivery.html" class="service-cta">Become a courier →</a>
         </div>
 
         <div class="service-block" id="svc-taxi">
@@ -197,7 +160,39 @@
           </div>
           <div class="service-tag" style="--c1:#F59E0B">For Drivers</div>
           <h3>Taxi App</h3>
-          <p>For professional drivers. Go online in seconds, pick up nearby passengers, and manage your trips with ease across the city.</p>
+          <p>Go online in seconds and connect with passengers nearby. Riders pay you directly in cash at the end of each trip — no delays, no deductions.</p>
+          <a href="register-taxi.html" class="service-cta">Drive with us →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Business Model Section -->
+  <section class="how-it-works" id="how">
+    <div class="section-inner">
+      <div class="section-label">How It Works</div>
+      <h2 class="section-title">Simple. <span class="gradient-text">Fair. Transparent.</span></h2>
+      <p class="section-subtitle">MyPlace is a platform that connects people — we don't take a cut of every transaction.</p>
+      <div class="how-grid">
+        <div class="how-card">
+          <div class="how-icon">📱</div>
+          <h4>Customer Opens the App</h4>
+          <p>Orders food, books a taxi, or requests a package delivery — all in one place.</p>
+        </div>
+        <div class="how-card">
+          <div class="how-icon">🔔</div>
+          <h4>Driver / Partner Gets Notified</h4>
+          <p>The nearest available courier or driver receives the request instantly.</p>
+        </div>
+        <div class="how-card">
+          <div class="how-icon">💵</div>
+          <h4>Cash Payment, No Commission</h4>
+          <p>Customers pay drivers and couriers directly in cash. MyPlace never touches the transaction.</p>
+        </div>
+        <div class="how-card">
+          <div class="how-icon">🔑</div>
+          <h4>Subscription for Platform Access</h4>
+          <p>Drivers and partners subscribe to keep using the app and receiving orders. Simple and fair.</p>
         </div>
       </div>
     </div>
@@ -241,26 +236,35 @@
     </div>
   </section>
 
-  <!-- Pre-Production CTA -->
-  <section class="notify-section" id="notify">
+  <!-- Pre-Production Join Section -->
+  <section class="notify-section" id="join">
     <div class="notify-card">
       <div class="notify-glow"></div>
       <div class="notify-content">
         <div class="notify-icon">🚀</div>
         <h2>Join the Pre-Production Program</h2>
-        <p>We are building the fleet and partner network before the public launch. Choose your role below and register your interest.</p>
+        <p>We are building our fleet and partner network before the public launch. Register now to be among the first on the platform.</p>
         <div class="pre-prod-options">
           <a href="register-delivery.html" class="pre-prod-btn delivery">
             <span class="pp-icon">🛵</span>
-            <span class="pp-text">Register as Courier</span>
+            <div>
+              <div class="pp-text">Become a Courier</div>
+              <div class="pp-sub">Deliver & earn in your city</div>
+            </div>
           </a>
           <a href="register-taxi.html" class="pre-prod-btn taxi">
             <span class="pp-icon">🚕</span>
-            <span class="pp-text">Register as Taxi Driver</span>
+            <div>
+              <div class="pp-text">Drive with Us</div>
+              <div class="pp-sub">Connect with passengers nearby</div>
+            </div>
           </a>
           <a href="register-partner.html" class="pre-prod-btn partner">
             <span class="pp-icon">🏪</span>
-            <span class="pp-text">Register as Partner / Store</span>
+            <div>
+              <div class="pp-text">Partner / Store</div>
+              <div class="pp-sub">Reach thousands of new customers</div>
+            </div>
           </a>
         </div>
       </div>
@@ -285,13 +289,14 @@
               </defs>
             </svg>
           </div>
-          <div class="logo-text"><span class="logo-brand">Rebelote</span></div>
+          <div class="logo-text"><span class="logo-brand">MyPlace</span></div>
         </div>
-        <p class="footer-tagline">The Global Super-App for Food, Taxi &amp; Delivery — by MyPlace.</p>
+        <p class="footer-tagline">The Global Super-App for Food, Taxi &amp; Delivery.</p>
       </div>
       <div class="footer-links">
         <a href="#services">Services</a>
-        <a href="#notify">Pre-Production</a>
+        <a href="#how">How It Works</a>
+        <a href="#join">Pre-Production</a>
         <a href="register-taxi.html">Taxi Drivers</a>
         <a href="register-delivery.html">Couriers</a>
         <a href="register-partner.html">Partners</a>
@@ -299,7 +304,7 @@
         <a href="https://www.facebook.com/Myplace.tn" target="_blank" rel="noopener noreferrer">Facebook</a>
       </div>
       <div class="footer-bottom">
-        <p>© 2025 MyPlace · All rights reserved · <strong>Rebelote</strong> is a product of MyPlace</p>
+        <p>© 2025 MyPlace · All rights reserved</p>
       </div>
     </div>
   </footer>
