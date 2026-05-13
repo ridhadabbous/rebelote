@@ -113,9 +113,9 @@ async function handleRegistration(event, userType) {
     const result = await res.json();
     if (result.success) {
       const dict = typeof translations !== 'undefined' ? translations[currentLang] : null;
-      const successTitle = dict ? dict['modal_success_title'] : 'Success!';
-      const successDesc = dict ? dict['modal_success_desc'] : 'Registration successful! We will review your account information and reach back to you soon.';
-      const btnText = dict ? dict['modal_btn'] : 'Close';
+      const successTitle = (dict && dict['modal_success_title']) || 'Success!';
+      const successDesc = (dict && dict['modal_success_desc']) || 'Registration successful! We will review your account information and reach back to you soon.';
+      const btnText = (dict && dict['modal_btn']) || 'Close';
 
       messageEl.textContent = successDesc;
       messageEl.className = 'form-message success';
