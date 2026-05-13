@@ -8,8 +8,6 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
   
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
-  
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="register.css" />
 </head>
@@ -24,40 +22,41 @@
             <path d="M17.5 23H25l-4 7h-3.5v-7z" fill="var(--bg)" opacity="0.7"/>
           </svg>
         </div>
-        <div class="logo-text">
-          <span class="logo-brand">MyPlace</span>
-        </div>
+        <div class="logo-text"><span class="logo-brand">MyPlace</span></div>
       </a>
+      <div class="nav-links">
+        <button id="lang-toggle" class="lang-toggle">🌐 EN | ع</button>
+      </div>
     </div>
   </nav>
 
   <div class="premium-layout">
     <!-- Left Side: Hero and Value Prop -->
-    <div class="premium-hero" style="background-image: url('https://images.unsplash.com/photo-1549194388-f61be84a6e9e?auto=format&fit=crop&q=80&w=800');">
+    <div class="premium-hero" style="background-image: url('https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&q=80&w=800');">
       <div class="premium-hero-content">
-        <h1>Drive on <span style="color: var(--violet)">Your Terms</span></h1>
-        <p class="hero-sub">Maximize your earnings with Rebelote. Pick up passengers when you want, where you want, with the lowest commission rates in the market.</p>
+        <h1><span data-i18n="rt_title">Drive on</span> <span style="color: var(--brand-light)" data-i18n="rt_title2">Your Terms</span></h1>
+        <p class="hero-sub" data-i18n="rt_sub">Join MyPlace as a taxi driver. Connect with passengers in your city and collect payment directly from them in cash — no commissions, no deductions, ever.</p>
         
         <div class="premium-benefits">
           <div class="benefit-item">
             <div class="benefit-icon">💵</div>
             <div class="benefit-text">
-              <h4>Cash Payments</h4>
-              <p>Passengers pay you directly in cash at the end of every trip. Instant, with no middleman.</p>
+              <h4 data-i18n="rt_b1_t">Cash Payments</h4>
+              <p data-i18n="rt_b1_d">Passengers pay you directly in cash at the end of every trip. Instant, with no middleman.</p>
             </div>
           </div>
           <div class="benefit-item">
             <div class="benefit-icon">🕒</div>
             <div class="benefit-text">
-              <h4>Total Flexibility</h4>
-              <p>You are your own boss. Go online and offline instantly. Work when and where it suits you.</p>
+              <h4 data-i18n="rt_b2_t">Total Flexibility</h4>
+              <p data-i18n="rt_b2_d">You are your own boss. Go online and offline instantly. Work when and where it suits you.</p>
             </div>
           </div>
           <div class="benefit-item">
             <div class="benefit-icon">📱</div>
             <div class="benefit-text">
-              <h4>Smart Driver App</h4>
-              <p>A powerful, intuitive app to accept rides, navigate efficiently and manage your day.</p>
+              <h4 data-i18n="rt_b3_t">Smart Driver App</h4>
+              <p data-i18n="rt_b3_d">A powerful, intuitive app to accept rides, navigate efficiently and manage your day.</p>
             </div>
           </div>
         </div>
@@ -66,53 +65,38 @@
 
     <!-- Right Side: Registration Form -->
     <div class="premium-form-side">
-      <a href="index.html#notify" class="back-link">← Back to Home</a>
+      <a href="index.html#join" class="back-link" data-i18n="back_home">← Back to Home</a>
       
       <div class="form-header">
-        <h2>Register as a Taxi Driver</h2>
-        <p>Fill out the details below to secure your spot in our early access fleet.</p>
+        <h2 data-i18n="rt_form_title">Register as a Taxi Driver</h2>
+        <p data-i18n="rd_form_sub">Fill in your details to join the MyPlace program.</p>
       </div>
 
       <form class="register-form" onsubmit="handleRegistration(event, 'Taxi Driver')">
         <div class="form-group">
-          <label for="name">Full Name</label>
+          <label for="name" data-i18n="form_name">Full Name</label>
           <input type="text" id="name" name="name" required placeholder="John Doe">
         </div>
         <div class="form-group">
-          <label for="email">Email Address</label>
+          <label for="email" data-i18n="form_email">Email Address</label>
           <input type="email" id="email" name="email" required placeholder="john@example.com">
         </div>
         <div class="form-group">
-          <label for="phone">Phone Number</label>
+          <label for="phone" data-i18n="form_phone">Phone Number</label>
           <input type="tel" id="phone" name="phone" required placeholder="+216 12 345 678">
-        </div>
-        <div class="form-group">
-          <label for="vehicle_details">Vehicle Details (Make/Model/Year)</label>
-          <input type="text" id="vehicle_details" name="vehicle_details" required placeholder="e.g. Toyota Corolla 2018">
-        </div>
-        
-        <div class="form-group">
-          <label>Operating Region</label>
-          <p class="map-instruction">Click on the map to define the center of your typical operating zone.</p>
-          <div id="map" class="map-container"></div>
         </div>
         
         <!-- Honeypot -->
         <input type="checkbox" name="botcheck" style="display:none" />
         
-        <button type="submit" class="submit-btn">Submit Registration</button>
+        <button type="submit" class="submit-btn" data-i18n="form_submit">Submit Registration</button>
         <div id="form-message" class="form-message"></div>
       </form>
     </div>
   </div>
 
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <script src="i18n.js"></script>
   <script src="main.js"></script>
   <script src="register.js"></script>
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      initMap(true);
-    });
-  </script>
 </body>
 </html>

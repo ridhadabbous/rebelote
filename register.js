@@ -112,8 +112,11 @@ async function handleRegistration(event, userType) {
 
     const result = await res.json();
     if (result.success) {
-      messageEl.textContent = 'Registration successful! We will be in touch soon.';
+      const successMsg = 'Registration successful! We will review your account information and reach back to you soon.';
+      messageEl.textContent = successMsg;
       messageEl.className = 'form-message success';
+      messageEl.style.display = 'block';
+      alert(successMsg); // Show a popup notification as requested
       form.reset();
       if (markerInstance) mapInstance.removeLayer(markerInstance);
       if (circleInstance) mapInstance.removeLayer(circleInstance);
@@ -125,6 +128,7 @@ async function handleRegistration(event, userType) {
     console.error('Registration Error:', err);
     messageEl.textContent = 'Something went wrong. Please try again later.';
     messageEl.className = 'form-message error';
+    messageEl.style.display = 'block';
   } finally {
     submitBtn.disabled = false;
     submitBtn.textContent = 'Submit Registration';

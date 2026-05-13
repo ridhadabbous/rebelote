@@ -26,6 +26,9 @@
         </div>
         <div class="logo-text"><span class="logo-brand">MyPlace</span></div>
       </a>
+      <div class="nav-links">
+        <button id="lang-toggle" class="lang-toggle">🌐 EN | ع</button>
+      </div>
     </div>
   </nav>
 
@@ -33,29 +36,29 @@
     <!-- Left Side: Hero and Value Prop -->
     <div class="premium-hero" style="background-image: url('https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?auto=format&fit=crop&q=80&w=800');">
       <div class="premium-hero-content">
-        <h1>Deliver & <span style="color: var(--brand-light)">Earn Your Way</span></h1>
-        <p class="hero-sub">Join the MyPlace courier fleet. Receive delivery requests in your area, deliver packages and food, and collect payment directly from customers — cash in hand, every time.</p>
+        <h1><span data-i18n="rd_title">Deliver &</span> <span style="color: var(--brand-light)" data-i18n="rd_title2">Earn Your Way</span></h1>
+        <p class="hero-sub" data-i18n="rd_sub">Join the MyPlace courier fleet. Receive delivery requests in your area, deliver packages and food, and collect payment directly from customers — cash in hand, every time.</p>
         
         <div class="premium-benefits">
           <div class="benefit-item">
             <div class="benefit-icon">💵</div>
             <div class="benefit-text">
-              <h4>Cash on Delivery</h4>
-              <p>Customers pay you directly in cash upon receiving their order. No waiting, no platform deductions.</p>
+              <h4 data-i18n="rd_b1_t">Cash on Delivery</h4>
+              <p data-i18n="rd_b1_d">Customers pay you directly in cash upon receiving their order. No waiting, no platform deductions.</p>
             </div>
           </div>
           <div class="benefit-item">
             <div class="benefit-icon">🛵</div>
             <div class="benefit-text">
-              <h4>Choose Your Vehicle</h4>
-              <p>Bike, scooter, or car — use whatever you already have to start delivering instantly.</p>
+              <h4 data-i18n="rd_b2_t">Choose Your Vehicle</h4>
+              <p data-i18n="rd_b2_d">Bike, scooter, or car — use whatever you already have to start delivering instantly.</p>
             </div>
           </div>
           <div class="benefit-item">
             <div class="benefit-icon">🗺️</div>
             <div class="benefit-text">
-              <h4>Work Your Zone</h4>
-              <p>Define your preferred working area and receive orders closest to you with smart routing.</p>
+              <h4 data-i18n="rd_b3_t">Work Your Zone</h4>
+              <p data-i18n="rd_b3_d">Define your preferred working area and receive orders closest to you with smart routing.</p>
             </div>
           </div>
         </div>
@@ -64,53 +67,54 @@
 
     <!-- Right Side: Registration Form -->
     <div class="premium-form-side">
-      <a href="index.html#notify" class="back-link">← Back to Home</a>
+      <a href="index.html#join" class="back-link" data-i18n="back_home">← Back to Home</a>
       
       <div class="form-header">
-        <h2>Register as a Courier</h2>
-        <p>Fill in your details to join the MyPlace pre-production program.</p>
+        <h2 data-i18n="rd_form_title">Register as a Courier</h2>
+        <p data-i18n="rd_form_sub">Fill in your details to join the MyPlace program.</p>
       </div>
 
       <form class="register-form" onsubmit="handleRegistration(event, 'Delivery Driver')">
         <div class="form-group">
-          <label for="name">Full Name</label>
+          <label for="name" data-i18n="form_name">Full Name</label>
           <input type="text" id="name" name="name" required placeholder="John Doe">
         </div>
         <div class="form-group">
-          <label for="email">Email Address</label>
+          <label for="email" data-i18n="form_email">Email Address</label>
           <input type="email" id="email" name="email" required placeholder="john@example.com">
         </div>
         <div class="form-group">
-          <label for="phone">Phone Number</label>
+          <label for="phone" data-i18n="form_phone">Phone Number</label>
           <input type="tel" id="phone" name="phone" required placeholder="+216 12 345 678">
         </div>
         <div class="form-group">
-          <label for="vehicle_type">Vehicle Type</label>
+          <label for="vehicle_type" data-i18n="rd_veh">Vehicle Type</label>
           <select id="vehicle_type" name="vehicle_type" required>
-            <option value="" disabled selected>Select your vehicle...</option>
-            <option value="Bicycle">Bicycle</option>
-            <option value="Scooter/Motorcycle">Scooter / Motorcycle</option>
-            <option value="Car">Car</option>
-            <option value="Van">Van</option>
+            <option value="" disabled selected data-i18n="rd_veh_sel">Select your vehicle...</option>
+            <option value="Bicycle" data-i18n="rd_v1">Bicycle</option>
+            <option value="Scooter/Motorcycle" data-i18n="rd_v2">Scooter / Motorcycle</option>
+            <option value="Car" data-i18n="rd_v3">Car</option>
+            <option value="Van" data-i18n="rd_v4">Van</option>
           </select>
         </div>
         
         <div class="form-group">
-          <label>Preferred Working Region</label>
-          <p class="map-instruction">Click on the map to define the center of your delivery zone.</p>
+          <label data-i18n="rd_reg">Preferred Working Region</label>
+          <p class="map-instruction" data-i18n="form_map_inst">Click on the map to define the center of your delivery zone.</p>
           <div id="map" class="map-container"></div>
         </div>
         
         <!-- Honeypot -->
         <input type="checkbox" name="botcheck" style="display:none" />
         
-        <button type="submit" class="submit-btn">Submit Registration</button>
+        <button type="submit" class="submit-btn" data-i18n="form_submit">Submit Registration</button>
         <div id="form-message" class="form-message"></div>
       </form>
     </div>
   </div>
 
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <script src="i18n.js"></script>
   <script src="main.js"></script>
   <script src="register.js"></script>
   <script>

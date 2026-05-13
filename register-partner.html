@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Partner with Rebelote | Store Registration</title>
+  <title>Partner with MyPlace | Store Registration</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
@@ -24,40 +24,41 @@
             <path d="M17.5 23H25l-4 7h-3.5v-7z" fill="var(--bg)" opacity="0.7"/>
           </svg>
         </div>
-        <div class="logo-text">
-          <span class="logo-brand">MyPlace</span>
-        </div>
+        <div class="logo-text"><span class="logo-brand">MyPlace</span></div>
       </a>
+      <div class="nav-links">
+        <button id="lang-toggle" class="lang-toggle">🌐 EN | ع</button>
+      </div>
     </div>
   </nav>
 
   <div class="premium-layout">
     <!-- Left Side: Hero and Value Prop -->
-    <div class="premium-hero" style="background-image: url('https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&q=80&w=800');">
+    <div class="premium-hero" style="background-image: url('https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&q=80&w=800');">
       <div class="premium-hero-content">
-        <h1>Grow Your <span style="color: var(--violet)">Business</span></h1>
-        <p class="hero-sub">Partner with Rebelote to expand your reach. Whether you run a restaurant, grocery store, or retail shop, we connect you with thousands of new customers.</p>
+        <h1><span data-i18n="rp_title">Grow</span> <span style="color: var(--brand-light)" data-i18n="rp_title2">Your Business</span></h1>
+        <p class="hero-sub" data-i18n="rp_sub">Partner with MyPlace to reach thousands of new customers in your city. Manage orders directly from a dedicated tablet and let our couriers handle the delivery.</p>
         
         <div class="premium-benefits">
           <div class="benefit-item">
             <div class="benefit-icon">📈</div>
             <div class="benefit-text">
-              <h4>Reach More Customers</h4>
-              <p>Gain instant visibility across your city and watch your daily order volume multiply.</p>
+              <h4 data-i18n="rp_b1_t">Zero Commission</h4>
+              <p data-i18n="rp_b1_d">Keep 100% of your menu prices. Customers pay couriers directly in cash.</p>
             </div>
           </div>
           <div class="benefit-item">
-            <div class="benefit-icon">📱</div>
+            <div class="benefit-icon">🛵</div>
             <div class="benefit-text">
-              <h4>Easy Management</h4>
-              <p>Receive our powerful Order Management Tablet to accept, prepare, and dispatch orders effortlessly.</p>
+              <h4 data-i18n="rp_b2_t">Delivery Solved</h4>
+              <p data-i18n="rp_b2_d">We handle the delivery logistics for you. Orders are automatically assigned to nearby couriers.</p>
             </div>
           </div>
           <div class="benefit-item">
-            <div class="benefit-icon">🚚</div>
+            <div class="benefit-icon">💻</div>
             <div class="benefit-text">
-              <h4>Reliable Fleet</h4>
-              <p>Don't worry about logistics. Our massive fleet of dedicated couriers will deliver your products fast.</p>
+              <h4 data-i18n="rp_b3_t">Easy Management</h4>
+              <p data-i18n="rp_b3_d">A dedicated tablet app to manage your menu, accept orders, and track your business growth.</p>
             </div>
           </div>
         </div>
@@ -66,62 +67,53 @@
 
     <!-- Right Side: Registration Form -->
     <div class="premium-form-side">
-      <a href="index.html#notify" class="back-link">← Back to Home</a>
+      <a href="index.html#join" class="back-link" data-i18n="back_home">← Back to Home</a>
       
       <div class="form-header">
-        <h2>Partner Registration</h2>
-        <p>Submit your store details below to get onboarded for the launch.</p>
+        <h2 data-i18n="rp_form_title">Register your Store</h2>
+        <p data-i18n="rd_form_sub">Fill in your details to join the MyPlace program.</p>
       </div>
 
-      <form class="register-form" onsubmit="handleRegistration(event, 'Partner')">
+      <form class="register-form" onsubmit="handleRegistration(event, 'Store Partner')">
         <div class="form-group">
-          <label for="store_name">Store / Restaurant Name</label>
-          <input type="text" id="store_name" name="store_name" required placeholder="e.g. Burger Place">
+          <label for="store_name" data-i18n="rp_store_name">Store Name</label>
+          <input type="text" id="store_name" name="store_name" required placeholder="My Awesome Restaurant">
         </div>
         <div class="form-group">
-          <label for="category">Category</label>
-          <select id="category" name="category" required>
-            <option value="" disabled selected>Select a category...</option>
-            <option value="Food">Food / Restaurant</option>
-            <option value="Grocery">Grocery / Supermarket</option>
-            <option value="Retail">Retail / Shop</option>
-            <option value="Other">Other</option>
-          </select>
+          <label for="name" data-i18n="form_name">Owner's Full Name</label>
+          <input type="text" id="name" name="name" required placeholder="John Doe">
         </div>
         <div class="form-group">
-          <label for="owner_name">Owner / Contact Name</label>
-          <input type="text" id="owner_name" name="owner_name" required placeholder="Jane Doe">
+          <label for="email" data-i18n="form_email">Email Address</label>
+          <input type="email" id="email" name="email" required placeholder="hello@store.com">
         </div>
         <div class="form-group">
-          <label for="email">Email Address</label>
-          <input type="email" id="email" name="email" required placeholder="jane@example.com">
-        </div>
-        <div class="form-group">
-          <label for="phone">Phone Number</label>
+          <label for="phone" data-i18n="form_phone">Phone Number</label>
           <input type="tel" id="phone" name="phone" required placeholder="+216 12 345 678">
         </div>
         
         <div class="form-group">
-          <label>Store Location</label>
-          <p class="map-instruction">Click on the map to drop a pin exactly where your store is located.</p>
+          <label data-i18n="rp_store_addr">Store Location</label>
+          <p class="map-instruction" data-i18n="form_map_inst">Click on the map to drop a pin at your exact store location.</p>
           <div id="map" class="map-container"></div>
         </div>
         
         <!-- Honeypot -->
         <input type="checkbox" name="botcheck" style="display:none" />
         
-        <button type="submit" class="submit-btn">Submit Registration</button>
+        <button type="submit" class="submit-btn" data-i18n="form_submit">Submit Registration</button>
         <div id="form-message" class="form-message"></div>
       </form>
     </div>
   </div>
 
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <script src="i18n.js"></script>
   <script src="main.js"></script>
   <script src="register.js"></script>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-      initMap(false); // false = no radius, just a pin
+      initMap(false); // Partners just need a pin, no radius
     });
   </script>
 </body>

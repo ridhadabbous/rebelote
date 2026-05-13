@@ -40,14 +40,15 @@
 
       <div class="nav-links" id="nav-links">
         <a href="register-delivery.html" class="nav-link">
-          <img src="icon_delivery.webp" alt="" class="nav-icon"> Become a Courier
+          <img src="icon_delivery.webp" alt="" class="nav-icon"> <span data-i18n="nav_courier">Become a Courier</span>
         </a>
         <a href="register-taxi.html" class="nav-link">
-          <img src="icon_taxi.webp" alt="" class="nav-icon"> Drive with Us
+          <img src="icon_taxi.webp" alt="" class="nav-icon"> <span data-i18n="nav_driver">Drive with Us</span>
         </a>
         <a href="register-partner.html" class="nav-link nav-link-cta">
-          <img src="icon_partner.webp" alt="" class="nav-icon"> Partner with Us
+          <img src="icon_partner.webp" alt="" class="nav-icon"> <span data-i18n="nav_partner">Partner with Us</span>
         </a>
+        <button id="lang-toggle" class="lang-toggle">🌐 EN | ع</button>
       </div>
 
       <button class="nav-hamburger" id="nav-hamburger" aria-label="Toggle menu">
@@ -55,9 +56,9 @@
       </button>
     </div>
     <div class="nav-mobile" id="nav-mobile">
-      <a href="register-delivery.html"><img src="icon_delivery.webp" alt="" class="nav-icon"> Become a Courier</a>
-      <a href="register-taxi.html"><img src="icon_taxi.webp" alt="" class="nav-icon"> Drive with Us</a>
-      <a href="register-partner.html"><img src="icon_partner.webp" alt="" class="nav-icon"> Partner with Us</a>
+      <a href="register-delivery.html"><img src="icon_delivery.webp" alt="" class="nav-icon"> <span data-i18n="nav_courier">Become a Courier</span></a>
+      <a href="register-taxi.html"><img src="icon_taxi.webp" alt="" class="nav-icon"> <span data-i18n="nav_driver">Drive with Us</span></a>
+      <a href="register-partner.html"><img src="icon_partner.webp" alt="" class="nav-icon"> <span data-i18n="nav_partner">Partner with Us</span></a>
     </div>
   </nav>
 
@@ -65,13 +66,13 @@
   <section class="hero" id="hero">
     <div class="hero-content">
       <div class="hero-eyebrow">
-        <span class="eyebrow-chip">🌍 The Global Super-App</span>
+        <span class="eyebrow-chip" data-i18n="hero_eyebrow">🌍 The Global Super-App</span>
       </div>
       <h1 class="hero-title">
-        One App.<br/>
-        <span class="gradient-text">Every Service.</span>
+        <span data-i18n="hero_title1">One App.</span><br/>
+        <span class="gradient-text" data-i18n="hero_title2">Every Service.</span>
       </h1>
-      <p class="hero-subtitle">
+      <p class="hero-subtitle" data-i18n="hero_sub">
         <strong>MyPlace</strong> — food delivery, taxi rides &amp; parcel shipping,<br class="break-lg"/>
         all in one seamless global experience.
       </p>
@@ -79,10 +80,10 @@
       <div class="cta-group">
         <a href="#join" class="btn-primary">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 01-3.46 0"/></svg>
-          Get Started
+          <span data-i18n="hero_cta1">Get Started</span>
         </a>
         <a href="#services" class="btn-ghost">
-          Explore Services
+          <span data-i18n="hero_cta2">Explore Services</span>
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
         </a>
       </div>
@@ -90,11 +91,11 @@
       <div class="store-badges">
         <div class="store-badge coming">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M3.18 23.76c.3.17.63.24.97.24.34 0 .69-.09 1.01-.28L17 16.94l-3.07-3.07-10.75 9.89zM21.4 10.63l-3.13-1.8-3.43 3.43 3.43 3.43 3.14-1.82c.9-.52.9-1.72 0-2.24z"/><path d="M2.04 1.26A1.02 1.02 0 001 2.3v19.4c0 .65.37 1.2.9 1.5L14.63 12 2.04 1.26z"/><path d="M17.1 5.03L5.16.28C4.84.09 4.5 0 4.15 0c-.34 0-.67.07-.97.24L16.34 13.06 19.41 10l-2.31-4.97z"/></svg>
-          <div><small>Available on</small><strong>Google Play</strong></div>
+          <div><small data-i18n="hero_store">Available on</small><strong>Google Play</strong></div>
         </div>
         <div class="store-badge coming">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
-          <div><small>Available on</small><strong>App Store</strong></div>
+          <div><small data-i18n="hero_store">Available on</small><strong>App Store</strong></div>
         </div>
       </div>
     </div>
@@ -111,20 +112,20 @@
   <div class="stats-bar">
     <div class="stats-inner">
       <div class="stat-item">
-        <div class="stat-number">3</div>
-        <div class="stat-label">Services in One App</div>
+        <div class="stat-number" data-i18n="stat_1_val">3</div>
+        <div class="stat-label" data-i18n="stat_1_lbl">Services in One App</div>
       </div>
       <div class="stat-item">
-        <div class="stat-number">4</div>
-        <div class="stat-label">Dedicated Apps</div>
+        <div class="stat-number" data-i18n="stat_2_val">4</div>
+        <div class="stat-label" data-i18n="stat_2_lbl">Dedicated Apps</div>
       </div>
       <div class="stat-item">
-        <div class="stat-number">Cash</div>
-        <div class="stat-label">Direct Payment to Drivers</div>
+        <div class="stat-number" data-i18n="stat_3_val">Cash</div>
+        <div class="stat-label" data-i18n="stat_3_lbl">Direct Payment to Drivers</div>
       </div>
       <div class="stat-item">
-        <div class="stat-number">∞</div>
-        <div class="stat-label">Growth Potential</div>
+        <div class="stat-number" data-i18n="stat_4_val">∞</div>
+        <div class="stat-label" data-i18n="stat_4_lbl">Growth Potential</div>
       </div>
     </div>
   </div>
@@ -132,39 +133,39 @@
   <!-- Services Section -->
   <section class="services" id="services">
     <div class="section-inner">
-      <div class="section-label">The Ecosystem</div>
-      <h2 class="section-title">Three Services.<br/><span class="gradient-text">One Platform.</span></h2>
-      <p class="section-subtitle">MyPlace connects customers, partners, couriers and taxi drivers through dedicated, purpose-built applications.</p>
+      <div class="section-label" data-i18n="eco_label">The Ecosystem</div>
+      <h2 class="section-title"><span data-i18n="eco_title1">Three Services.</span><br/><span class="gradient-text" data-i18n="eco_title2">One Platform.</span></h2>
+      <p class="section-subtitle" data-i18n="eco_sub">MyPlace connects customers, partners, couriers and taxi drivers through dedicated, purpose-built applications.</p>
 
       <div class="services-grid">
         <div class="service-block" id="svc-partner">
           <div class="service-icon-wrap" style="--c1:#7C3AED;--c2:#A78BFA">
             <img src="icon_partner.webp" alt="Partner" class="service-icon-img" loading="lazy">
           </div>
-          <div class="service-tag" style="--c1:#7C3AED">For Businesses</div>
-          <h3>Partner App</h3>
-          <p>Restaurants, grocery stores and retail shops. Manage your menu, receive orders and reach thousands of new customers without worrying about delivery logistics.</p>
-          <a href="register-partner.html" class="service-cta">Register your store →</a>
+          <div class="service-tag" style="--c1:#7C3AED" data-i18n="eco_tag_partner">For Businesses</div>
+          <h3 data-i18n="eco_app_partner">Partner App</h3>
+          <p data-i18n="eco_desc_partner">Restaurants, grocery stores and retail shops. Manage your menu, receive orders and reach thousands of new customers without worrying about delivery logistics.</p>
+          <a href="register-partner.html" class="service-cta" data-i18n="eco_cta_partner">Register your store →</a>
         </div>
 
         <div class="service-block" id="svc-delivery">
           <div class="service-icon-wrap" style="--c1:#10B981;--c2:#34D399">
             <img src="icon_delivery.webp" alt="Delivery" class="service-icon-img" loading="lazy">
           </div>
-          <div class="service-tag" style="--c1:#10B981">For Couriers</div>
-          <h3>Delivery App</h3>
-          <p>Accept delivery orders in your zone, navigate efficiently and collect payment directly from customers in cash. Full control, zero middleman.</p>
-          <a href="register-delivery.html" class="service-cta">Become a courier →</a>
+          <div class="service-tag" style="--c1:#10B981" data-i18n="eco_tag_courier">For Couriers</div>
+          <h3 data-i18n="eco_app_courier">Delivery App</h3>
+          <p data-i18n="eco_desc_courier">Accept delivery orders in your zone, navigate efficiently and collect payment directly from customers in cash. Full control, zero middleman.</p>
+          <a href="register-delivery.html" class="service-cta" data-i18n="eco_cta_courier">Become a courier →</a>
         </div>
 
         <div class="service-block" id="svc-taxi">
           <div class="service-icon-wrap" style="--c1:#F59E0B;--c2:#FCD34D">
             <img src="icon_taxi.webp" alt="Taxi" class="service-icon-img" loading="lazy">
           </div>
-          <div class="service-tag" style="--c1:#F59E0B">For Drivers</div>
-          <h3>Taxi App</h3>
-          <p>Go online in seconds and connect with passengers nearby. Riders pay you directly in cash at the end of each trip — no delays, no deductions.</p>
-          <a href="register-taxi.html" class="service-cta">Drive with us →</a>
+          <div class="service-tag" style="--c1:#F59E0B" data-i18n="eco_tag_taxi">For Drivers</div>
+          <h3 data-i18n="eco_app_taxi">Taxi App</h3>
+          <p data-i18n="eco_desc_taxi">Go online in seconds and connect with passengers nearby. Riders pay you directly in cash at the end of each trip — no delays, no deductions.</p>
+          <a href="register-taxi.html" class="service-cta" data-i18n="eco_cta_taxi">Drive with us →</a>
         </div>
       </div>
     </div>
@@ -173,29 +174,29 @@
   <!-- How It Works -->
   <section class="how-it-works" id="how">
     <div class="section-inner">
-      <div class="section-label">How It Works</div>
-      <h2 class="section-title">Simple. <span class="gradient-text">Fair. Transparent.</span></h2>
-      <p class="section-subtitle">MyPlace connects people directly — customers pay drivers and couriers in cash, no platform cut on every transaction.</p>
+      <div class="section-label" data-i18n="how_label">How It Works</div>
+      <h2 class="section-title"><span data-i18n="how_title1">Simple.</span> <span class="gradient-text" data-i18n="how_title2">Fair. Transparent.</span></h2>
+      <p class="section-subtitle" data-i18n="how_sub">MyPlace connects people directly — customers pay drivers and couriers in cash, no platform cut on every transaction.</p>
       <div class="how-grid">
         <div class="how-card">
           <div class="how-icon">📱</div>
-          <h4>Customer Opens the App</h4>
-          <p>Orders food, books a taxi, or requests a delivery — all in one seamless place.</p>
+          <h4 data-i18n="how_c1_title">Customer Opens the App</h4>
+          <p data-i18n="how_c1_desc">Orders food, books a taxi, or requests a delivery — all in one seamless place.</p>
         </div>
         <div class="how-card">
           <div class="how-icon">🔔</div>
-          <h4>Driver or Partner Gets Notified</h4>
-          <p>The nearest available courier or driver receives the request instantly.</p>
+          <h4 data-i18n="how_c2_title">Driver or Partner Gets Notified</h4>
+          <p data-i18n="how_c2_desc">The nearest available courier or driver receives the request instantly.</p>
         </div>
         <div class="how-card">
           <div class="how-icon">💵</div>
-          <h4>Cash, No Commission</h4>
-          <p>Customers pay drivers and couriers directly. MyPlace never takes a cut of your earnings.</p>
+          <h4 data-i18n="how_c3_title">Cash, No Commission</h4>
+          <p data-i18n="how_c3_desc">Customers pay drivers and couriers directly. MyPlace never takes a cut of your earnings.</p>
         </div>
         <div class="how-card">
           <div class="how-icon">🔑</div>
-          <h4>Simple Platform Subscription</h4>
-          <p>Drivers and partners pay a flat subscription to access the platform and keep receiving orders.</p>
+          <h4 data-i18n="how_c4_title">Simple Platform Subscription</h4>
+          <p data-i18n="how_c4_desc">Drivers and partners pay a flat subscription to access the platform and keep receiving orders.</p>
         </div>
       </div>
     </div>
@@ -207,28 +208,28 @@
       <div class="notify-glow"></div>
       <div class="notify-content">
         <div class="notify-icon">🌍</div>
-        <h2>Start with MyPlace Today</h2>
-        <p>Choose your role and register now to get access to the platform and start earning.</p>
+        <h2 data-i18n="join_title">Start with MyPlace Today</h2>
+        <p data-i18n="join_sub">Choose your role and register now to get access to the platform and start earning.</p>
         <div class="pre-prod-options">
           <a href="register-delivery.html" class="pre-prod-btn delivery">
             <img src="icon_delivery.webp" alt="" class="pp-img">
             <div>
-              <div class="pp-text">Become a Courier</div>
-              <div class="pp-sub">Deliver &amp; earn in your city</div>
+              <div class="pp-text" data-i18n="nav_courier">Become a Courier</div>
+              <div class="pp-sub" data-i18n="join_d_sub">Deliver &amp; earn in your city</div>
             </div>
           </a>
           <a href="register-taxi.html" class="pre-prod-btn taxi">
             <img src="icon_taxi.webp" alt="" class="pp-img">
             <div>
-              <div class="pp-text">Drive with Us</div>
-              <div class="pp-sub">Connect with passengers nearby</div>
+              <div class="pp-text" data-i18n="nav_driver">Drive with Us</div>
+              <div class="pp-sub" data-i18n="join_t_sub">Connect with passengers nearby</div>
             </div>
           </a>
           <a href="register-partner.html" class="pre-prod-btn partner">
             <img src="icon_partner.webp" alt="" class="pp-img">
             <div>
-              <div class="pp-text">Partner / Store</div>
-              <div class="pp-sub">Reach thousands of new customers</div>
+              <div class="pp-text" data-i18n="nav_partner">Partner / Store</div>
+              <div class="pp-sub" data-i18n="join_p_sub">Reach thousands of new customers</div>
             </div>
           </a>
         </div>
@@ -256,16 +257,16 @@
           </div>
           <div class="logo-text"><span class="logo-brand">MyPlace</span></div>
         </div>
-        <p class="footer-tagline">The Global Super-App for Food, Taxi &amp; Delivery.</p>
+        <p class="footer-tagline" data-i18n="footer_tagline">The Global Super-App for Food, Taxi &amp; Delivery.</p>
       </div>
       <div class="footer-links">
-        <a href="#services">Services</a>
-        <a href="#how">How It Works</a>
-        <a href="#join">Get Started</a>
-        <a href="register-taxi.html">Taxi Drivers</a>
-        <a href="register-delivery.html">Couriers</a>
-        <a href="register-partner.html">Partners</a>
-        <a href="mailto:support@myplace.tn">Contact Us</a>
+        <a href="#services" data-i18n="f_link_services">Services</a>
+        <a href="#how" data-i18n="f_link_how">How It Works</a>
+        <a href="#join" data-i18n="f_link_join">Get Started</a>
+        <a href="register-taxi.html" data-i18n="f_link_taxi">Taxi Drivers</a>
+        <a href="register-delivery.html" data-i18n="f_link_couriers">Couriers</a>
+        <a href="register-partner.html" data-i18n="f_link_partners">Partners</a>
+        <a href="mailto:support@myplace.tn" data-i18n="f_link_contact">Contact Us</a>
         <a href="https://www.facebook.com/Myplace.tn" target="_blank" rel="noopener noreferrer">Facebook</a>
       </div>
       <div class="footer-bottom">
@@ -274,6 +275,7 @@
     </div>
   </footer>
 
+  <script src="i18n.js"></script>
   <script src="main.js"></script>
 </body>
 </html>
