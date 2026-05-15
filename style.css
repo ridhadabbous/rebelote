@@ -77,7 +77,6 @@ body {
   color: var(--brand-light);
 }
 .nav-icon {
-  filter: grayscale(100%);
   width: 22px;
   height: 22px;
   object-fit: cover;
@@ -152,7 +151,7 @@ body {
 }
 .logo-mark { display: flex; align-items: center; }
 .logo-text { font-family: 'Outfit', sans-serif; font-size: 1.25rem; font-weight: 700; }
-.logo-brand { color: var(--text); }
+.logo-brand { color: var(--brand); }
 .nav-badge {
   display: flex;
   align-items: center;
@@ -398,7 +397,7 @@ body {
   width: 100%;
   max-width: 460px;
   border-radius: 24px;
-  filter: grayscale(100%) drop-shadow(0 30px 60px rgba(229,57,53,0.3));
+  filter: drop-shadow(0 30px 60px rgba(229,57,53,0.3));
   position: relative;
   z-index: 2;
 }
@@ -533,7 +532,6 @@ section { position: relative; z-index: 1; }
   overflow: hidden;
 }
 .service-icon-img {
-  filter: grayscale(100%);
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -600,7 +598,6 @@ section { position: relative; z-index: 1; }
 .pre-prod-btn:hover { transform: translateY(-4px); background: var(--surface-hover); }
 .pp-icon { font-size: 1.5rem; flex-shrink: 0; }
 .pp-img {
-  filter: grayscale(100%);
   width: 44px;
   height: 44px;
   object-fit: cover;
@@ -671,7 +668,6 @@ section { position: relative; z-index: 1; }
   font-family: 'Inter', 'Outfit', sans-serif; /* Fallback for Arabic */
 }
 [dir="rtl"] .nav-icon {
-  filter: grayscale(100%);
   margin-right: 0;
   margin-left: 4px;
 }
