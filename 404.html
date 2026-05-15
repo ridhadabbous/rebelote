@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>404 - Page Not Found | MyPlace</title>
+  <meta name="description" content="MyPlace - Page not found." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .error-section {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 120px 32px;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+    .error-code {
+      font-family: 'Outfit', sans-serif;
+      font-size: clamp(6rem, 15vw, 12rem);
+      font-weight: 900;
+      line-height: 1;
+      margin-bottom: 20px;
+      background: linear-gradient(135deg, var(--brand-light), var(--brand-dark));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-shadow: 0 0 40px rgba(229,57,53,0.3);
+    }
+    .error-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+    .error-desc {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      max-width: 500px;
+      margin: 0 auto 40px;
+      line-height: 1.6;
+    }
+    
+    /* Hacker Terminal Box */
+    .hacker-box {
+      margin-top: 40px;
+      background: rgba(0,0,0,0.8);
+      border: 1px solid var(--brand);
+      border-radius: 8px;
+      padding: 24px;
+      max-width: 600px;
+      width: 100%;
+      text-align: left;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.9rem;
+      box-shadow: 0 0 30px rgba(229,57,53,0.15);
+      position: relative;
+      overflow: hidden;
+    }
+    .hacker-box::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: var(--brand);
+      box-shadow: 0 0 10px var(--brand);
+    }
+    .hacker-line {
+      color: var(--text-muted);
+      margin-bottom: 8px;
+    }
+    .hacker-line span.red { color: var(--brand-light); font-weight: bold; }
+    .hacker-line span.white { color: #fff; }
+    .cursor {
+      display: inline-block;
+      width: 10px;
+      height: 1.2em;
+      background: var(--brand);
+      vertical-align: bottom;
+      animation: blink 1s step-end infinite;
+    }
+    @keyframes blink { 50% { opacity: 0; } }
+  </style>
+</head>
+<body>
+  <canvas id="bg-canvas"></canvas>
+
+  <!-- Navbar -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <div class="logo-mark">
+          <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
+            <circle cx="18" cy="18" r="18" fill="#000"/>
+            <path d="M18 7c-4.418 0-8 3.582-8 8 0 5.25 8 14 8 14s8-8.75 8-14c0-4.418-3.582-8-8-8zm0 11c-1.657 0-3-1.343-3-3s1.343-3 3-3 3 1.343 3 3-1.343 3-3 3z" fill="#fff"/>
+            <path d="M11 28c0 1.5 3.134 2.5 7 2.5s7-1 7-2.5" stroke="#fff" stroke-width="1.5" fill="none"/>
+            <path d="M14 28c0 .828 1.79 1.5 4 1.5s4-.672 4-1.5" stroke="#fff" stroke-width="1.5" fill="none"/>
+          </svg>
+        </div>
+        <div class="logo-text"><span class="logo-brand">MyPlace</span></div>
+      </a>
+      <div class="nav-links" id="nav-links">
+        <a href="register-delivery.html" class="nav-link">
+          <img src="icon_delivery.webp" alt="" class="nav-icon"> <span data-i18n="nav_courier">Become a Courier</span>
+        </a>
+        <a href="register-taxi.html" class="nav-link">
+          <img src="icon_taxi.webp" alt="" class="nav-icon"> <span data-i18n="nav_driver">Drive with Us</span>
+        </a>
+        <a href="register-partner.html" class="nav-link nav-link-cta">
+          <img src="icon_partner.webp" alt="" class="nav-icon"> <span data-i18n="nav_partner">Partner with Us</span>
+        </a>
+        <button id="lang-toggle" class="lang-toggle">🌐 EN | ع</button>
+      </div>
+      <button class="nav-hamburger" id="nav-hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="nav-mobile" id="nav-mobile">
+      <a href="register-delivery.html"><img src="icon_delivery.webp" alt="" class="nav-icon"> <span data-i18n="nav_courier">Become a Courier</span></a>
+      <a href="register-taxi.html"><img src="icon_taxi.webp" alt="" class="nav-icon"> <span data-i18n="nav_driver">Drive with Us</span></a>
+      <a href="register-partner.html"><img src="icon_partner.webp" alt="" class="nav-icon"> <span data-i18n="nav_partner">Partner with Us</span></a>
+    </div>
+  </nav>
+
+  <!-- 404 Section -->
+  <section class="error-section">
+    <div class="error-code">404</div>
+    <h1 class="error-title">Page Not Found</h1>
+    <p class="error-desc">Oops! It seems you've wandered off the map. The page you are looking for doesn't exist or has been moved.</p>
+    
+    <a href="index.html" class="btn-primary" style="margin-bottom: 20px;">
+      ← Back to Safety
+    </a>
+
+    <!-- Hacker warning -->
+    <div class="hacker-box">
+      <div class="hacker-line">> <span class="white">system.analyzeRequest(window.location.pathname)</span></div>
+      <div class="hacker-line">> <span class="red">WARNING:</span> Invalid directory access attempt detected.</div>
+      <div class="hacker-line">> Checking intent...</div>
+      <div class="hacker-line">> <span class="white">Are you lost? Or are you just poking around trying to find vulnerabilities?</span></div>
+      <div class="hacker-line">> <span class="red">ACCESS DENIED.</span> Nice try, script kiddie. This incident will be reported (just kidding, but seriously, go back). <span class="cursor"></span></div>
+    </div>
+  </section>
+
+  <script src="i18n.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
