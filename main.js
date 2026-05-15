@@ -24,7 +24,7 @@ if (canvas && ctx) {
         vx: (Math.random() - 0.5) * 0.25,
         vy: (Math.random() - 0.5) * 0.25,
         alpha: Math.random() * 0.5 + 0.1,
-        color: Math.random() > 0.5 ? '124,58,237' : '245,158,11',
+        color: Math.random() > 0.5 ? '229,57,53' : '255,255,255',
       });
     }
   }
@@ -41,7 +41,7 @@ if (canvas && ctx) {
         if (dist < 130) {
           const opacity = (1 - dist / 130) * 0.12;
           ctx.beginPath();
-          ctx.strokeStyle = `rgba(124,58,237,${opacity})`;
+          ctx.strokeStyle = `rgba(229,57,53,${opacity})`;
           ctx.lineWidth = 0.5;
           ctx.moveTo(particles[i].x, particles[i].y);
           ctx.lineTo(particles[j].x, particles[j].y);
@@ -176,7 +176,7 @@ cards.forEach(card => {
       screenTitle.textContent = data.title;
       statusEl.textContent = data.status;
       cards.forEach(c => c.style.outline = 'none');
-      card.style.outline = '2px solid rgba(108,58,255,0.6)';
+      card.style.outline = '2px solid rgba(229,57,53,0.6)';
     }
   });
 });
@@ -266,7 +266,7 @@ glow.style.cssText = `
   width: 320px;
   height: 320px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(124,58,237,0.07) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(229,57,53,0.07) 0%, transparent 70%);
   pointer-events: none;
   z-index: 0;
   transform: translate(-50%, -50%);
