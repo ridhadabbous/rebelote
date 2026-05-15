@@ -1,7 +1,7 @@
 /* === PRE-PROD BUTTONS (kept minimal, register.css handles registration layout) === */
-.pre-prod-btn.delivery { border-color: rgba(16,185,129,0.2); }
-.pre-prod-btn.taxi { border-color: rgba(245,158,11,0.2); }
-.pre-prod-btn.partner { border-color: rgba(124,58,237,0.2); }
+.pre-prod-btn.delivery { border-color: rgba(255,255,255,0.2); }
+.pre-prod-btn.taxi { border-color: rgba(255,255,255,0.2); }
+.pre-prod-btn.partner { border-color: rgba(229,57,53,0.2); }
 
 /* === PREMIUM REGISTRATION LAYOUT === */
 .premium-layout {
@@ -43,8 +43,8 @@
 .benefit-item { display: flex; align-items: flex-start; gap: 16px; }
 .benefit-icon {
   width: 44px; height: 44px;
-  background: rgba(124,58,237,0.1);
-  border: 1px solid rgba(124,58,237,0.25);
+  background: rgba(229,57,53,0.1);
+  border: 1px solid rgba(229,57,53,0.25);
   color: var(--brand-light);
   border-radius: 12px;
   display: flex; align-items: center; justify-content: center;
@@ -122,11 +122,11 @@
   font-family: 'Outfit', sans-serif;
   transition: transform 0.2s, box-shadow 0.2s;
 }
-.submit-btn:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(124,58,237,0.4); }
+.submit-btn:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(229,57,53,0.4); }
 .submit-btn:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
 
 .form-message { padding: 14px 16px; border-radius: 8px; margin-top: 16px; display: none; font-weight: 500; font-size: 0.95rem; }
-.form-message.success { display: block; background: rgba(16,185,129,0.12); border: 1px solid rgba(16,185,129,0.3); color: #34D399; }
+.form-message.success { display: block; background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.3); color: #34D399; }
 .form-message.error { display: block; background: rgba(239,68,68,0.12); border: 1px solid rgba(239,68,68,0.3); color: #F87171; }
 
 @media (max-width: 900px) {
