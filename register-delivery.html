@@ -111,9 +111,21 @@
         </div>
         
         <div class="form-group">
-          <label data-i18n="rd_reg">Preferred Working Region</label>
-          <p class="map-instruction" data-i18n="form_map_inst">Click on the map to define the center of your delivery zone.</p>
-          <div id="map" class="map-container"></div>
+          <label for="city" data-i18n="rd_reg">Preferred Working Region</label>
+          <select id="city" name="city" required>
+            <option value="" disabled selected data-i18n="form_city_sel">Select your city...</option>
+            <option value="Tunis">Tunis</option>
+            <option value="Ariana">Ariana</option>
+            <option value="Ben Arous">Ben Arous</option>
+            <option value="Manouba">Manouba</option>
+            <option value="Sousse">Sousse</option>
+            <option value="Sfax">Sfax</option>
+            <option value="Monastir">Monastir</option>
+            <option value="Nabeul">Nabeul</option>
+            <option value="Bizerte">Bizerte</option>
+            <option value="Gabes">Gabès</option>
+            <option value="Kairouan">Kairouan</option>
+          </select>
         </div>
         
         <!-- Honeypot -->
@@ -125,14 +137,8 @@
     </div>
   </div>
 
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
   <script src="i18n.js"></script>
   <script src="main.js"></script>
   <script src="register.js"></script>
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      initMap(true);
-    });
-  </script>
 </body>
 </html>

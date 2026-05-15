@@ -736,3 +736,29 @@ section { position: relative; z-index: 1; }
   .services-grid { grid-template-columns: 1fr; }
   .stats-inner { grid-template-columns: 1fr 1fr; gap: 20px; }
 }
+
+/* ==========================================================================
+   X. GLOBAL ENHANCEMENTS
+   ========================================================================== */
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255,255,255,0.2);
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(229,57,53,0.5);
+}
+
+/* Global Focus Outline */
+*:focus-visible {
+  outline: 2px solid var(--brand);
+  outline-offset: 2px;
+}

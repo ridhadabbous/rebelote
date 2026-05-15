@@ -77,6 +77,12 @@ async function handleRegistration(event, userType) {
     dataObj[key] = value;
   });
 
+  // Merge country code and phone if both exist
+  if (dataObj.country_code && dataObj.phone) {
+    dataObj.phone = `${dataObj.country_code} ${dataObj.phone}`;
+    delete dataObj.country_code;
+  }
+
   // Attach location if captured
   if (capturedLocation) {
     dataObj.location = capturedLocation;
