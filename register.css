@@ -135,3 +135,20 @@
   .premium-hero { padding: 40px 20px; min-height: 50vh; }
   .premium-hero::before { background: linear-gradient(to bottom, rgba(0,0,0,0.9), rgba(0,0,0,0.75)); }
 }
+
+/* === PHONE INPUT GROUP === */
+.phone-input-group {
+  display: flex;
+  gap: 8px;
+}
+.phone-input-group .country-select {
+  flex-shrink: 0;
+  width: 140px;
+}
+.phone-input-group .phone-number {
+  flex-grow: 1;
+}
+[dir="rtl"] .phone-input-group .phone-number {
+  direction: ltr;
+  text-align: left;
+}
