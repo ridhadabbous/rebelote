@@ -77,15 +77,19 @@ async function handleRegistration(event, userType) {
     dataObj[key] = value;
   });
 
-  // Merge country code and phone if both exist
-  if (dataObj.country_code && dataObj.phone) {
-    dataObj.phone = `${dataObj.country_code} ${dataObj.phone}`;
-    delete dataObj.country_code;
+  // Map city to working_city as expected by the worker
+  if (dataObj.city) {
+    dataObj.working_city = dataObj.city;
+    delete dataObj.city;
   }
+
+  // Set the registration type for the worker to route correctly
+  dataObj.type = userType;
 
   // Attach location if captured
   if (capturedLocation) {
-    dataObj.location = capturedLocation;
+    dataObj.latitude = parseFloat(capturedLocation.lat);
+    dataObj.longitude = parseFloat(capturedLocation.lng);
   } else if (document.getElementById('map')) {
     // If map exists but no location selected, prompt user
     messageEl.textContent = 'Please select a location on the map.';
@@ -95,29 +99,24 @@ async function handleRegistration(event, userType) {
     return;
   }
 
-  // Format payload
-  const payload = {
-    access_key: WEB3FORMS_KEY,
-    subject: `🚀 New ${userType} Pre-Production Registration`,
-    from_name: 'Rebelote Registration',
-    replyto: dataObj.email || '',
-    // Send the data directly as JSON string in the message body
-    message: JSON.stringify(dataObj, null, 2),
-    botcheck: ''
-  };
-
   try {
-    const res = await fetch('https://api.web3forms.com/submit', {
+    const res = await fetch('https://registration-backend.dsridha.workers.dev/', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
         'Accept': 'application/json'
       },
-      body: JSON.stringify(payload)
+      body: JSON.stringify(dataObj)
     });
 
-    const result = await res.json();
-    if (result.success) {
+    let result;
+    try {
+      result = await res.json();
+    } catch (e) {
+      result = { success: false, message: 'Invalid response from server' };
+    }
+
+    if (res.ok && result.success) {
       const dict = typeof translations !== 'undefined' ? translations[currentLang] : null;
       const successTitle = (dict && dict['modal_success_title']) || 'Success!';
       const successDesc = (dict && dict['modal_success_desc']) || 'Registration successful! We will review your account information and reach back to you soon.';
@@ -154,7 +153,7 @@ async function handleRegistration(event, userType) {
       if (circleInstance) mapInstance.removeLayer(circleInstance);
       capturedLocation = null;
     } else {
-      throw new Error(result.message || 'Submission failed');
+      throw new Error(result.error || result.message || 'Submission failed');
     }
   } catch (err) {
     console.error('Registration Error:', err);
