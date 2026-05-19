@@ -1,16 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Drive with Rebelo | Taxi Registration</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
-  
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap"
+    rel="stylesheet" />
+
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="register.css" />
 </head>
+
 <body>
   <nav class="navbar scrolled" id="navbar">
     <div class="nav-inner">
@@ -27,29 +31,34 @@
     <!-- Left Side: Hero and Value Prop -->
     <div class="premium-hero" style="background-image: url('bg_taxi.webp');">
       <div class="premium-hero-content">
-        <h1><span data-i18n="rt_title">Drive on</span> <span style="color: var(--brand-light)" data-i18n="rt_title2">Your Terms</span></h1>
-        <p class="hero-sub" data-i18n="rt_sub">Join Rebelo as a taxi driver. Connect with passengers in your city and collect payment directly from them in cash — no commissions, no deductions, ever.</p>
-        
+        <h1><span data-i18n="rt_title">Drive on</span> <span style="color: var(--brand-light)"
+            data-i18n="rt_title2">Your Terms</span></h1>
+        <p class="hero-sub" data-i18n="rt_sub">Join Rebelo as a taxi driver. Connect with passengers in your city and
+          collect payment directly from them in cash no commissions, no deductions, ever.</p>
+
         <div class="premium-benefits">
           <div class="benefit-item">
             <div class="benefit-icon">💵</div>
             <div class="benefit-text">
               <h4 data-i18n="rt_b1_t">Cash Payments</h4>
-              <p data-i18n="rt_b1_d">Passengers pay you directly in cash at the end of every trip. Instant, with no middleman.</p>
+              <p data-i18n="rt_b1_d">Passengers pay you directly in cash at the end of every trip. Instant, with no
+                middleman.</p>
             </div>
           </div>
           <div class="benefit-item">
             <div class="benefit-icon">🕒</div>
             <div class="benefit-text">
               <h4 data-i18n="rt_b2_t">Total Flexibility</h4>
-              <p data-i18n="rt_b2_d">You are your own boss. Go online and offline instantly. Work when and where it suits you.</p>
+              <p data-i18n="rt_b2_d">You are your own boss. Go online and offline instantly. Work when and where it
+                suits you.</p>
             </div>
           </div>
           <div class="benefit-item">
             <div class="benefit-icon">📱</div>
             <div class="benefit-text">
               <h4 data-i18n="rt_b3_t">Smart Driver App</h4>
-              <p data-i18n="rt_b3_d">A powerful, intuitive app to accept rides, navigate efficiently and manage your day.</p>
+              <p data-i18n="rt_b3_d">A powerful, intuitive app to accept rides, navigate efficiently and manage your
+                day.</p>
             </div>
           </div>
         </div>
@@ -59,7 +68,7 @@
     <!-- Right Side: Registration Form -->
     <div class="premium-form-side">
       <a href="index.html#join" class="back-link" data-i18n="back_home">← Back to Home</a>
-      
+
       <div class="form-header">
         <h2 data-i18n="rt_form_title">Register as a Taxi Driver</h2>
         <p data-i18n="rd_form_sub">Fill in your details to join the Rebelo program.</p>
@@ -83,7 +92,7 @@
             <input type="tel" id="phone" name="phone" required placeholder="12 345 678" class="phone-number">
           </div>
         </div>
-        
+
         <div class="form-group">
           <label for="city" data-i18n="rd_reg">Preferred Working Region</label>
           <select id="city" name="city" required>
@@ -114,10 +123,10 @@
             <option value="Tataouine">Tataouine</option>
           </select>
         </div>
-        
+
         <!-- Honeypot -->
         <input type="checkbox" name="botcheck" style="display:none" />
-        
+
         <button type="submit" class="submit-btn" data-i18n="form_submit">Submit Registration</button>
         <div id="form-message" class="form-message"></div>
       </form>
@@ -128,4 +137,5 @@
   <script src="main.js"></script>
   <script src="register.js"></script>
 </body>
+
 </html>

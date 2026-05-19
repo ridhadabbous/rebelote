@@ -183,7 +183,7 @@ cards.forEach(card => {
 
 /* ===========================
    NOTIFY FORM
-   Uses Web3Forms (https://web3forms.com) — free, no backend needed.
+   Uses Web3Forms (https://web3forms.com) free, no backend needed.
    The key is injected at deploy time from a GitHub Actions secret.
    To set it up:
      1. Go to https://web3forms.com
@@ -214,7 +214,7 @@ async function handleNotify(e) {
       headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
       body: JSON.stringify({
         access_key: WEB3FORMS_KEY,
-        subject: '🔔 New Launch Notification Request — Rebelote',
+        subject: '🔔 New Launch Notification Request Rebelote',
         from_name: 'Rebelote Splash Page',
         replyto: email,
         message: `A visitor wants to be notified at launch.\n\nEmail: ${email}\nTime: ${new Date().toLocaleString('fr-TN', { timeZone: 'Africa/Tunis' })}\nPage: ${window.location.href}`,
