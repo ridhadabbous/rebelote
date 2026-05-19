@@ -65,6 +65,7 @@ const translations = {
 
         // Footer
         "footer_tagline": "The Global Super-App for Food, Taxi & Delivery.",
+        "footer_copyright": "© 2025 Rebelo · Developed by the MyPlace.tn team · All rights reserved",
         "f_link_services": "Services",
         "f_link_how": "How It Works",
         "f_link_join": "Get Started",
@@ -198,6 +199,7 @@ const translations = {
 
         // Footer
         "footer_tagline": "التطبيق الشامل لتوصيل الطعام، حجز الرحلات، وشحن الطرود.",
+        "footer_copyright": "© 2025 Rebelo · تم التطوير بواسطة فريق MyPlace.tn · جميع الحقوق محفوظة",
         "f_link_services": "خدماتنا",
         "f_link_how": "آلية العمل",
         "f_link_join": "ابدأ الآن",
