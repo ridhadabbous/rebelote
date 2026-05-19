@@ -9,7 +9,7 @@ const translations = {
     "hero_eyebrow": "🌍 The Global Super-App",
     "hero_title1": "One App.",
     "hero_title2": "Every Service.",
-    "hero_sub": "<strong><span style='color: #E53935;'>MyPlace</span></strong> — food delivery, taxi rides & parcel shipping,<br class='break-lg'/>all in one seamless global experience.",
+    "hero_sub": "<strong><span style='color: #E53935;'>Rebelo</span></strong> — food delivery, taxi rides & parcel shipping,<br class='break-lg'/>all in one seamless global experience.",
     "hero_cta1": "Get Started",
     "hero_cta2": "Explore Services",
     "hero_store": "Available on",
@@ -28,7 +28,7 @@ const translations = {
     "eco_label": "The Ecosystem",
     "eco_title1": "Three Services.",
     "eco_title2": "One Platform.",
-    "eco_sub": "<span style='color: #E53935;'>MyPlace</span> connects customers, partners, couriers and taxi drivers through dedicated, purpose-built applications.",
+    "eco_sub": "<span style='color: #E53935;'>Rebelo</span> connects customers, partners, couriers and taxi drivers through dedicated, purpose-built applications.",
     "eco_tag_partner": "For Businesses",
     "eco_app_partner": "Partner App",
     "eco_desc_partner": "Restaurants, grocery stores and retail shops. Manage your menu, receive orders and reach thousands of new customers without worrying about delivery logistics.",
@@ -46,18 +46,18 @@ const translations = {
     "how_label": "How It Works",
     "how_title1": "Simple.",
     "how_title2": "Fair. Transparent.",
-    "how_sub": "<span style='color: #E53935;'>MyPlace</span> connects people directly — customers pay drivers and couriers in cash, no platform cut on every transaction.",
+    "how_sub": "<span style='color: #E53935;'>Rebelo</span> connects people directly — customers pay drivers and couriers in cash, no platform cut on every transaction.",
     "how_c1_title": "Customer Opens the App",
     "how_c1_desc": "Orders food, books a taxi, or requests a delivery — all in one seamless place.",
     "how_c2_title": "Driver or Partner Gets Notified",
     "how_c2_desc": "The nearest available courier or driver receives the request instantly.",
     "how_c3_title": "Cash, No Commission",
-    "how_c3_desc": "Customers pay drivers and couriers directly. <span style='color: #E53935;'>MyPlace</span> never takes a cut of your earnings.",
+    "how_c3_desc": "Customers pay drivers and couriers directly. <span style='color: #E53935;'>Rebelo</span> never takes a cut of your earnings.",
     "how_c4_title": "Simple Platform Subscription",
     "how_c4_desc": "Drivers and partners pay a flat subscription to access the platform and keep receiving orders.",
 
     // Join Section
-    "join_title": "Start with <span style='color: #E53935;'>MyPlace</span> Today",
+    "join_title": "Start with <span style='color: #E53935;'>Rebelo</span> Today",
     "join_sub": "Choose your role and register now to get access to the platform and start earning.",
     "join_d_sub": "Deliver & earn in your city",
     "join_t_sub": "Connect with passengers nearby",
@@ -84,7 +84,7 @@ const translations = {
     // Reg Delivery
     "rd_title": "Deliver &",
     "rd_title2": "Earn Your Way",
-    "rd_sub": "Join the <span style='color: #E53935;'>MyPlace</span> courier fleet. Receive delivery requests in your area, deliver packages and food, and collect payment directly from customers — cash in hand, every time.",
+    "rd_sub": "Join the <span style='color: #E53935;'>Rebelo</span> courier fleet. Receive delivery requests in your area, deliver packages and food, and collect payment directly from customers — cash in hand, every time.",
     "rd_b1_t": "Cash on Delivery",
     "rd_b1_d": "Customers pay you directly in cash upon receiving their order. No waiting, no platform deductions.",
     "rd_b2_t": "Choose Your Vehicle",
@@ -92,7 +92,7 @@ const translations = {
     "rd_b3_t": "Work Your Zone",
     "rd_b3_d": "Define your preferred working area and receive orders closest to you with smart routing.",
     "rd_form_title": "Register as a Courier",
-    "rd_form_sub": "Fill in your details to join the <span style='color: #E53935;'>MyPlace</span> program.",
+    "rd_form_sub": "Fill in your details to join the <span style='color: #E53935;'>Rebelo</span> program.",
     "rd_veh": "Vehicle Type",
     "rd_veh_sel": "Select your vehicle...",
     "rd_v1": "Bicycle",
@@ -104,7 +104,7 @@ const translations = {
     // Reg Taxi
     "rt_title": "Drive on",
     "rt_title2": "Your Terms",
-    "rt_sub": "Join <span style='color: #E53935;'>MyPlace</span> as a taxi driver. Connect with passengers in your city and collect payment directly from them in cash — no commissions, no deductions, ever.",
+    "rt_sub": "Join <span style='color: #E53935;'>Rebelo</span> as a taxi driver. Connect with passengers in your city and collect payment directly from them in cash — no commissions, no deductions, ever.",
     "rt_b1_t": "Cash Payments",
     "rt_b1_d": "Passengers pay you directly in cash at the end of every trip. Instant, with no middleman.",
     "rt_b2_t": "Total Flexibility",
@@ -116,7 +116,7 @@ const translations = {
     // Reg Partner
     "rp_title": "Grow",
     "rp_title2": "Your Business",
-    "rp_sub": "Partner with <span style='color: #E53935;'>MyPlace</span> to reach thousands of new customers in your city. Manage orders directly from a dedicated tablet and let our couriers handle the delivery.",
+    "rp_sub": "Partner with <span style='color: #E53935;'>Rebelo</span> to reach thousands of new customers in your city. Manage orders directly from a dedicated tablet and let our couriers handle the delivery.",
     "rp_b1_t": "Zero Commission",
     "rp_b1_d": "Keep 100% of your menu prices. Customers pay couriers directly in cash.",
     "rp_b2_t": "Delivery Solved",
@@ -142,7 +142,7 @@ const translations = {
     "hero_eyebrow": "🌍 التطبيق الأول عالمياً",
     "hero_title1": "تطبيق واحد.",
     "hero_title2": "يلبي كل احتياجاتك.",
-    "hero_sub": "<strong><span style='color: #E53935;'>MyPlace</span></strong> — وجهتك الأولى لطلب الطعام، حجز رحلاتك، وشحن طرودك،<br class='break-lg'/>كل هذا وأكثر في تجربة عالمية سلسة لا مثيل لها.",
+    "hero_sub": "<strong><span style='color: #E53935;'>Rebelo</span></strong> — وجهتك الأولى لطلب الطعام، حجز رحلاتك، وشحن طرودك،<br class='break-lg'/>كل هذا وأكثر في تجربة عالمية سلسة لا مثيل لها.",
     "hero_cta1": "ابدأ تجربتك الآن",
     "hero_cta2": "تصفح خدماتنا",
     "hero_store": "متوفر الآن على",
@@ -161,7 +161,7 @@ const translations = {
     "eco_label": "عالمنا المتكامل",
     "eco_title1": "ثلاث خدمات أساسية.",
     "eco_title2": "منصة واحدة تجمعنا.",
-    "eco_sub": "منصة <span style='color: #E53935;'>MyPlace</span> تجمع بين العملاء والشركاء، مناديب التوصيل والسائقين، من خلال تطبيقات مبتكرة صُممت خصيصاً لتسهيل حياتك.",
+    "eco_sub": "منصة <span style='color: #E53935;'>Rebelo</span> تجمع بين العملاء والشركاء، مناديب التوصيل والسائقين، من خلال تطبيقات مبتكرة صُممت خصيصاً لتسهيل حياتك.",
     "eco_tag_partner": "لأصحاب الأعمال",
     "eco_app_partner": "تطبيق الشركاء",
     "eco_desc_partner": "للمطاعم والمتاجر ومحلات التجزئة. أدر طلباتك بذكاء، وسّع نطاق عملك، وصِل لآلاف العملاء الجدد دون أن تحمل همّ لوجستيات التوصيل.",
@@ -179,18 +179,18 @@ const translations = {
     "how_label": "آلية العمل",
     "how_title1": "بكل بساطة.",
     "how_title2": "عدل وشفافية مطلقة.",
-    "how_sub": "في <span style='color: #E53935;'>MyPlace</span>، نؤمن بالتواصل المباشر — يدفع العميل نقداً للسائق أو المندوب، والمنصة لا تقتطع أي نسبة من أرباحك على الإطلاق.",
+    "how_sub": "في <span style='color: #E53935;'>Rebelo</span>، نؤمن بالتواصل المباشر — يدفع العميل نقداً للسائق أو المندوب، والمنصة لا تقتطع أي نسبة من أرباحك على الإطلاق.",
     "how_c1_title": "العميل يفتح التطبيق",
     "how_c1_desc": "يطلب وجبته المفضلة، يحجز سيارة، أو يرسل طرداً — كل ذلك من مكان واحد بكل سهولة.",
     "how_c2_title": "إشعار فوري للشريك والسائق",
     "how_c2_desc": "أقرب مندوب توصيل أو سائق متاح يتلقى الطلب في لمح البصر.",
     "how_c3_title": "أرباحك نقداً، بدون عمولات",
-    "how_c3_desc": "يدفع العملاء بشكل مباشر. <span style='color: #E53935;'>MyPlace</span> لا ولن تقتطع قرشاً واحداً من أرباحك الصافية.",
+    "how_c3_desc": "يدفع العملاء بشكل مباشر. <span style='color: #E53935;'>Rebelo</span> لا ولن تقتطع قرشاً واحداً من أرباحك الصافية.",
     "how_c4_title": "اشتراك رمزي وبسيط",
     "how_c4_desc": "يدفع شركاؤنا وسائقونا اشتراكاً دورياً ثابتاً للاستفادة من المنصة واستقبال طلبات لا حصر لها.",
 
     // Join Section
-    "join_title": "انطلق مع <span style='color: #E53935;'>MyPlace</span> اليوم",
+    "join_title": "انطلق مع <span style='color: #E53935;'>Rebelo</span> اليوم",
     "join_sub": "اختر دورك، سجل بياناتك، وابدأ بتحقيق دخل إضافي بكل سهولة.",
     "join_d_sub": "وصّل واكسب في مدينتك",
     "join_t_sub": "استقبل الركاب القريبين منك",
@@ -218,7 +218,7 @@ const translations = {
     // Reg Delivery
     "rd_title": "وصّل براحتك، و",
     "rd_title2": "حقق أرباحك بشروطك",
-    "rd_sub": "انضم لأسطول توصيل <span style='color: #E53935;'>MyPlace</span> اليوم. استقبل الطلبات في منطقتك، سلم الطرود والوجبات، واقبض أرباحك نقداً وفوراً من العملاء.",
+    "rd_sub": "انضم لأسطول توصيل <span style='color: #E53935;'>Rebelo</span> اليوم. استقبل الطلبات في منطقتك، سلم الطرود والوجبات، واقبض أرباحك نقداً وفوراً من العملاء.",
     "rd_b1_t": "دفع فوري نقداً",
     "rd_b1_d": "تستلم مستحقاتك نقداً من العميل مباشرة. لا تأجيل ولا عمولات مقتطعة.",
     "rd_b2_t": "استخدم مركبتك الخاصة",
@@ -226,7 +226,7 @@ const translations = {
     "rd_b3_t": "العمل في نطاقك المفضل",
     "rd_b3_d": "اختر المنطقة التي تفضل العمل بها، وسنوجه لك الطلبات القريبة لزيادة كفاءتك.",
     "rd_form_title": "سجل كمندوب توصيل",
-    "rd_form_sub": "املأ بياناتك وانضم إلى عائلة <span style='color: #E53935;'>MyPlace</span>.",
+    "rd_form_sub": "املأ بياناتك وانضم إلى عائلة <span style='color: #E53935;'>Rebelo</span>.",
     "rd_veh": "نوع المركبة",
     "rd_veh_sel": "اختر نوع مركبتك...",
     "rd_v1": "دراجة هوائية",
@@ -238,7 +238,7 @@ const translations = {
     // Reg Taxi
     "rt_title": "كن أنت",
     "rt_title2": "رئيس نفسك",
-    "rt_sub": "انضم كسائق مع <span style='color: #E53935;'>MyPlace</span> واستقل برحلاتك. تواصل مع ركاب مدينتك، واحصل على أجرتك نقداً وبدون أي عمولات مخفية.",
+    "rt_sub": "انضم كسائق مع <span style='color: #E53935;'>Rebelo</span> واستقل برحلاتك. تواصل مع ركاب مدينتك، واحصل على أجرتك نقداً وبدون أي عمولات مخفية.",
     "rt_b1_t": "أجرتك كاش وفوراً",
     "rt_b1_d": "يدفع لك الركاب نقداً في نهاية كل مشوار. فوري وبلا وسطاء.",
     "rt_b2_t": "مرونة بلا حدود",
@@ -250,7 +250,7 @@ const translations = {
     // Reg Partner
     "rp_title": "ارتقِ",
     "rp_title2": "بنشاطك التجاري",
-    "rp_sub": "انضم كشريك تجاري مع <span style='color: #E53935;'>MyPlace</span> للوصول إلى آلاف العملاء الجدد. أدر طلباتك بسهولة عبر جهاز لوحي، ودع أسطولنا يتكفل بالتوصيل.",
+    "rp_sub": "انضم كشريك تجاري مع <span style='color: #E53935;'>Rebelo</span> للوصول إلى آلاف العملاء الجدد. أدر طلباتك بسهولة عبر جهاز لوحي، ودع أسطولنا يتكفل بالتوصيل.",
     "rp_b1_t": "أرباحك لك بنسبة 100%",
     "rp_b1_d": "لا نفرض أي عمولات على قائمة طعامك. العميل يدفع للمندوب نقداً.",
     "rp_b2_t": "لا تشل هم التوصيل",
@@ -268,11 +268,11 @@ const translations = {
   }
 };
 
-let currentLang = localStorage.getItem('myplace_lang') || 'en';
+let currentLang = localStorage.getItem('rebelo_lang') || 'en';
 
 function applyLanguage(lang) {
   currentLang = lang;
-  localStorage.setItem('myplace_lang', lang);
+  localStorage.setItem('rebelo_lang', lang);
   document.documentElement.lang = lang === 'ar' ? 'ar' : 'en';
   document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
 

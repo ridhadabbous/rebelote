@@ -187,7 +187,7 @@ cards.forEach(card => {
    The key is injected at deploy time from a GitHub Actions secret.
    To set it up:
      1. Go to https://web3forms.com
-     2. Enter "support@myplace.tn" → "Create Access Key"
+     2. Enter "support@rebelo.tn" → "Create Access Key"
      3. In GitHub repo → Settings → Secrets → Actions → New secret
         Name: WEB3FORMS_KEY  /  Value: (your key)
 =========================== */
