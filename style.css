@@ -146,12 +146,53 @@ body {
 .nav-logo {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 4px;
   text-decoration: none;
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
 }
-.logo-mark { display: flex; align-items: center; }
-.logo-text { font-family: 'Outfit', sans-serif; font-size: 1.25rem; font-weight: 700; }
-.logo-brand { color: var(--brand); }
+
+.nav-logo .logo-dot {
+  width: 7px;
+  height: 7px;
+  background-color: var(--brand-light);
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: -1px;
+  box-shadow: 0 0 10px var(--brand-light);
+  transform: translateY(2px);
+}
+
+.nav-logo .logo-r {
+  color: var(--brand-light);
+  font-style: italic;
+  font-weight: 900;
+  font-size: 1.7rem;
+  letter-spacing: -0.06em;
+  line-height: 1;
+}
+
+.nav-logo .logo-rest {
+  color: #ffffff;
+  font-weight: 700;
+  line-height: 1;
+}
+
+/* Footer specific logo scaling */
+.footer .nav-logo {
+  font-size: 1.25rem;
+  gap: 3px;
+}
+.footer .nav-logo .logo-dot {
+  width: 5px;
+  height: 5px;
+  transform: translateY(1.5px);
+}
+.footer .nav-logo .logo-r {
+  font-size: 1.4rem;
+}
 .nav-badge {
   display: flex;
   align-items: center;
