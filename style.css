@@ -152,6 +152,7 @@ body {
   font-size: 1.5rem;
   font-weight: 800;
   letter-spacing: -0.03em;
+  direction: ltr !important;
 }
 
 .nav-logo .logo-dot {
