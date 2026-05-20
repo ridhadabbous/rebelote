@@ -270,7 +270,7 @@ const translations = {
     }
 };
 
-let currentLang = localStorage.getItem('rebelo_lang') || 'en';
+let currentLang = localStorage.getItem('rebelo_lang') || 'ar';
 
 function applyLanguage(lang) {
     currentLang = lang;
