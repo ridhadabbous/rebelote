@@ -165,3 +165,19 @@ async function handleRegistration(event, userType) {
     submitBtn.textContent = 'Submit Registration';
   }
 }
+
+// Auto-scroll to the form on mobile devices
+document.addEventListener('DOMContentLoaded', () => {
+  if (window.innerWidth <= 900) {
+    const formSide = document.querySelector('.premium-form-side');
+    if (formSide) {
+      setTimeout(() => {
+        const yOffset = -90; // offset for fixed navbar and spacing
+        const scrollY = window.scrollY !== undefined ? window.scrollY : window.pageYOffset;
+        const y = formSide.getBoundingClientRect().top + scrollY + yOffset;
+        window.scrollTo({ top: y, behavior: 'smooth' });
+      }, 300);
+    }
+  }
+});
+
