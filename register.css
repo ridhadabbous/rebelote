@@ -127,7 +127,7 @@
 
 .form-message { padding: 14px 16px; border-radius: 8px; margin-top: 16px; display: none; font-weight: 500; font-size: 0.95rem; }
 .form-message.success { display: block; background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.3); color: #ffffff; }
-.form-message.error { display: block; background: rgba(239,68,68,0.12); border: 1px solid rgba(239,68,68,0.3); color: #E53935; }
+.form-message.error { display: block; background: rgba(239,68,68,0.12); border: 1px solid rgba(239,68,68,0.3); color: var(--danger); }
 
 @media (max-width: 900px) {
   .premium-layout { flex-direction: column; }
