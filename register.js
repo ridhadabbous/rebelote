@@ -137,7 +137,7 @@ async function handleRegistration(event, userType) {
   }
 
   try {
-    const res = await fetch('__REGISTRATION_BACKEND_URL__', {
+    const res = await fetch('https://registration-backend.dsridha.workers.dev/', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
