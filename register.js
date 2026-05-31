@@ -3,6 +3,42 @@ let markerInstance = null;
 let circleInstance = null;
 let capturedLocation = null;
 
+const DRAFT_KEY = 'rebelo_reg_draft';
+
+function saveDraft() {
+  const form = document.querySelector('.register-form');
+  if (!form) return;
+  const fd = new FormData(form);
+  const data = {};
+  fd.forEach((v, k) => { data[k] = v; });
+  try { localStorage.setItem(DRAFT_KEY, JSON.stringify(data)); } catch (e) {}
+}
+
+function restoreDraft() {
+  try {
+    const raw = localStorage.getItem(DRAFT_KEY);
+    if (!raw) return;
+    const data = JSON.parse(raw);
+    Object.entries(data).forEach(([key, val]) => {
+      const el = document.getElementById(key) || document.querySelector(`[name="${key}"]`);
+      if (el && el.type !== 'checkbox' && el.type !== 'hidden') {
+        el.value = val;
+      }
+    });
+  } catch (e) {}
+}
+
+function clearDraft() {
+  try { localStorage.removeItem(DRAFT_KEY); } catch (e) {}
+}
+
+const COUNTRIES = {
+  tn: { code: '+216', cities: ['Tunis', 'Ariana', 'Ben Arous', 'Manouba', 'Nabeul', 'Zaghouan', 'Bizerte', 'Beja', 'Jendouba', 'Kef', 'Siliana', 'Kairouan', 'Kasserine', 'Sidi Bouzid', 'Sousse', 'Monastir', 'Mahdia', 'Sfax', 'Gafsa', 'Tozeur', 'Kebili', 'Gabes', 'Medenine', 'Tataouine'], center: [36.8065, 10.1815] },
+  dz: { code: '+213', cities: ['Algiers', 'Oran', 'Constantine', 'Annaba', 'Blida', 'Setif', 'Tlemcen', 'Bejaia', 'Batna', 'Skikda', 'Biskra', 'Tizi Ouzou'], center: [36.7538, 3.0588] },
+  ly: { code: '+218', cities: ['Tripoli', 'Benghazi', 'Misrata', 'Zawiya', 'Al Khums', 'Derna', 'Tobruk', 'Sabha', 'Bayda', 'Sirte', 'Gharyan', 'Zliten'], center: [32.8872, 13.1913] },
+  fr: { code: '+33', cities: ['Paris', 'Marseille', 'Lyon', 'Toulouse', 'Nice', 'Nantes', 'Strasbourg', 'Montpellier', 'Bordeaux', 'Lille', 'Rennes', 'Grenoble'], center: [48.8566, 2.3522] }
+};
+
 /**
  * Initializes a Leaflet Map defaulting to Tunis, Tunisia.
  * @param {boolean} requireRadius - Whether to show a working radius circle.
@@ -11,8 +47,10 @@ function initMap(requireRadius = false) {
   const mapEl = document.getElementById('map');
   if (!mapEl) return;
 
-  // Default to Tunis, Tunisia
-  const defaultLocation = [36.8065, 10.1815];
+  const ccEl = document.getElementById('country_code');
+  const selected = ccEl ? ccEl.value : '+216';
+  const country = Object.values(COUNTRIES).find(c => c.code === selected) || COUNTRIES.tn;
+  const defaultLocation = country.center;
 
   mapInstance = L.map('map', {
     center: defaultLocation,
@@ -56,7 +94,7 @@ function initMap(requireRadius = false) {
 }
 
 /**
- * Handles form submission and sends JSON payload via Web3Forms
+ * Handles form submission and sends JSON payload to the registration backend
  */
 async function handleRegistration(event, userType) {
   event.preventDefault();
@@ -64,43 +102,42 @@ async function handleRegistration(event, userType) {
   const form = event.target;
   const submitBtn = form.querySelector('.submit-btn');
   const messageEl = document.getElementById('form-message');
+  const dict = typeof translations !== 'undefined' ? translations[currentLang] : null;
 
   submitBtn.disabled = true;
-  submitBtn.textContent = 'Submitting...';
+  const submittingText = (dict && dict['form_submitting']) || 'Submitting...';
+  submitBtn.innerHTML = `<span class="spinner"></span> ${submittingText}`;
   messageEl.className = 'form-message';
   messageEl.style.display = 'none';
 
-  // Gather form data
   const formData = new FormData(form);
   const dataObj = {};
   formData.forEach((value, key) => {
     dataObj[key] = value;
   });
 
-  // Map city to working_city as expected by the worker
   if (dataObj.city) {
     dataObj.working_city = dataObj.city;
     delete dataObj.city;
   }
 
-  // Set the registration type for the worker to route correctly
   dataObj.type = userType;
 
-  // Attach location if captured
   if (capturedLocation) {
     dataObj.latitude = parseFloat(capturedLocation.lat);
     dataObj.longitude = parseFloat(capturedLocation.lng);
   } else if (document.getElementById('map')) {
-    // If map exists but no location selected, prompt user
-    messageEl.textContent = 'Please select a location on the map.';
+    const mapPrompt = (dict && dict['form_map_prompt']) || 'Please select a location on the map.';
+    messageEl.textContent = mapPrompt;
     messageEl.className = 'form-message error';
     submitBtn.disabled = false;
-    submitBtn.textContent = 'Submit Registration';
+    const submitText = (dict && dict['form_submit']) || 'Submit Registration';
+    submitBtn.innerHTML = submitText;
     return;
   }
 
   try {
-    const res = await fetch('https://registration-backend.dsridha.workers.dev/', {
+    const res = await fetch('__REGISTRATION_BACKEND_URL__', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -117,7 +154,6 @@ async function handleRegistration(event, userType) {
     }
 
     if (res.ok && result.success) {
-      const dict = typeof translations !== 'undefined' ? translations[currentLang] : null;
       const successTitle = (dict && dict['modal_success_title']) || 'Success!';
       const successDesc = (dict && dict['modal_success_desc']) || 'Registration successful! We will review your account information and reach back to you soon.';
       const btnText = (dict && dict['modal_btn']) || 'Close';
@@ -125,17 +161,16 @@ async function handleRegistration(event, userType) {
       messageEl.textContent = successDesc;
       messageEl.className = 'form-message success';
       messageEl.style.display = 'block';
-      
-      // Inject custom modal
+
       const modalHtml = `
-        <div id="custom-modal-overlay" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(0,0,0,0.6); backdrop-filter: blur(4px); z-index: 9999; display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s ease;">
-          <div style="background: #111111; border: 1px solid rgba(255, 82, 82, 0.35); border-radius: 16px; padding: 32px; max-width: 400px; width: 90%; text-align: center; box-shadow: 0 20px 40px rgba(0,0,0,0.6); transform: scale(0.9); transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);">
-            <div style="width: 60px; height: 60px; background: rgba(255, 82, 82, 0.15); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px;">
+        <div id="custom-modal-overlay" class="modal-overlay">
+          <div class="modal-content">
+            <div class="modal-icon">
               <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
             </div>
-            <h3 style="color: #fff; font-size: 1.5rem; margin-bottom: 12px; font-family: 'Outfit', sans-serif;">${successTitle}</h3>
-            <p style="color: rgba(255,255,255,0.7); font-size: 1rem; line-height: 1.5; margin-bottom: 24px;">${successDesc}</p>
-            <button onclick="document.getElementById('custom-modal-overlay').remove()" style="background: var(--brand-light); color: #fff; border: none; padding: 12px 24px; border-radius: 8px; font-size: 1rem; font-weight: 600; cursor: pointer; width: 100%; transition: background 0.2s;">${btnText}</button>
+            <h3 class="modal-title">${successTitle}</h3>
+            <p class="modal-desc">${successDesc}</p>
+            <button class="modal-btn" onclick="document.getElementById('custom-modal-overlay').remove()">${btnText}</button>
           </div>
         </div>
       `;
@@ -144,10 +179,12 @@ async function handleRegistration(event, userType) {
         const overlay = document.getElementById('custom-modal-overlay');
         if (overlay) {
           overlay.style.opacity = '1';
-          overlay.children[0].style.transform = 'scale(1)';
+          const content = overlay.querySelector('.modal-content');
+          if (content) content.style.transform = 'scale(1)';
         }
       }, 10);
 
+      clearDraft();
       form.reset();
       if (markerInstance) mapInstance.removeLayer(markerInstance);
       if (circleInstance) mapInstance.removeLayer(circleInstance);
@@ -157,22 +194,92 @@ async function handleRegistration(event, userType) {
     }
   } catch (err) {
     console.error('Registration Error:', err);
-    messageEl.textContent = 'Something went wrong. Please try again later.';
+    const errMsg = (dict && dict['form_error']) || 'Something went wrong. Please try again later.';
+    messageEl.textContent = errMsg;
     messageEl.className = 'form-message error';
     messageEl.style.display = 'block';
   } finally {
     submitBtn.disabled = false;
-    submitBtn.textContent = 'Submit Registration';
+    const submitText = (dict && dict['form_submit']) || 'Submit Registration';
+    submitBtn.innerHTML = submitText;
   }
 }
 
-// Auto-scroll to the form on mobile devices
+const COUNTRY_FLAGS = { tn: '\u{1F1F9}\u{1F1F3}', dz: '\u{1F1E9}\u{1F1FF}', ly: '\u{1F1F1}\u{1F1FE}', fr: '\u{1F1EB}\u{1F1F7}' };
+
+function populateCountryCode() {
+  const sel = document.getElementById('country_code');
+  if (!sel) return;
+  sel.innerHTML = '';
+  Object.entries(COUNTRIES).forEach(([key, c]) => {
+    const opt = document.createElement('option');
+    opt.value = c.code;
+    opt.textContent = `${COUNTRY_FLAGS[key]} ${c.code}`;
+    if (c.code === '+216') opt.selected = true;
+    sel.appendChild(opt);
+  });
+}
+
+function populateCities() {
+  const ccSel = document.getElementById('country_code');
+  const citySel = document.getElementById('city');
+  if (!ccSel || !citySel) return;
+  const dict = typeof translations !== 'undefined' ? translations[currentLang] : null;
+  const placeholder = (dict && dict['form_city_sel']) || 'Select your city...';
+  const country = Object.values(COUNTRIES).find(c => c.code === ccSel.value) || COUNTRIES.tn;
+  citySel.innerHTML = `<option value="" disabled selected>${placeholder}</option>`;
+  country.cities.forEach(name => {
+    const opt = document.createElement('option');
+    opt.value = name;
+    opt.textContent = name;
+    citySel.appendChild(opt);
+  });
+}
+
+function updateMapCenter() {
+  if (!mapInstance) return;
+  const ccSel = document.getElementById('country_code');
+  if (!ccSel) return;
+  const country = Object.values(COUNTRIES).find(c => c.code === ccSel.value) || COUNTRIES.tn;
+  mapInstance.setView(country.center, 12);
+  if (markerInstance) {
+    mapInstance.removeLayer(markerInstance);
+    markerInstance = null;
+  }
+  if (circleInstance) {
+    mapInstance.removeLayer(circleInstance);
+    circleInstance = null;
+  }
+  capturedLocation = null;
+}
+
+// Turnstile: add widget here when ready
+// See https://developers.cloudflare.com/turnstile/
+
 document.addEventListener('DOMContentLoaded', () => {
+  populateCountryCode();
+  populateCities();
+
+  const ccSel = document.getElementById('country_code');
+  if (ccSel) {
+    ccSel.addEventListener('change', () => {
+      populateCities();
+      updateMapCenter();
+    });
+  }
+
+  restoreDraft();
+
+  const form = document.querySelector('.register-form');
+  if (form) {
+    form.addEventListener('change', saveDraft);
+  }
+
   if (window.innerWidth <= 900) {
     const formSide = document.querySelector('.premium-form-side');
     if (formSide) {
       setTimeout(() => {
-        const yOffset = -90; // offset for fixed navbar and spacing
+        const yOffset = -90;
         const scrollY = window.scrollY !== undefined ? window.scrollY : window.pageYOffset;
         const y = formSide.getBoundingClientRect().top + scrollY + yOffset;
         window.scrollTo({ top: y, behavior: 'smooth' });

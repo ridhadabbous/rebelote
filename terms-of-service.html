@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <script>
+    (function() {
+      const lang = localStorage.getItem('rebelo_lang') || 'ar';
+      document.documentElement.lang = lang;
+      document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+    })();
+  </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title data-i18n="tos_title">Terms of Service | Rebelo</title>
+  <meta name="description" data-i18n="tos_title" content="Rebelo Terms of Service" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <nav class="navbar scrolled" id="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <span class="logo-dot"></span><span class="logo-r">R</span><span class="logo-rest">ebelo</span>
+      </a>
+      <div class="nav-links">
+        <button id="lang-toggle" class="lang-toggle"></button>
+      </div>
+    </div>
+  </nav>
+
+  <section class="legal-section">
+    <div class="legal-container">
+      <h1 data-i18n="tos_title">Terms of Service</h1>
+      <p class="legal-date" data-i18n="tos_last_updated">Last updated: May 2026</p>
+
+      <div class="legal-block">
+        <p data-i18n="tos_intro">These Terms of Service ("Terms") govern your registration and use of the Rebelo platform as a driver, courier, or partner. By registering, you agree to these Terms.</p>
+      </div>
+
+      <div class="legal-block">
+        <h2 data-i18n="tos_elig_title">Eligibility</h2>
+        <p data-i18n="tos_elig_body">You must be at least 18 years old and legally eligible to provide the services you register for (driving, delivery, or food service). You agree to provide accurate and complete information during registration.</p>
+      </div>
+
+      <div class="legal-block">
+        <h2 data-i18n="tos_oblig_title">Your Obligations</h2>
+        <p data-i18n="tos_oblig_body">You agree to: provide accurate information, maintain the confidentiality of your account, comply with all applicable laws, and conduct yourself professionally when using the platform.</p>
+      </div>
+
+      <div class="legal-block">
+        <h2 data-i18n="tos_prohib_title">Prohibited Uses</h2>
+        <p data-i18n="tos_prohib_body">You may not: use the platform for any illegal purpose, provide false information, attempt to circumvent platform rules, or engage in fraudulent activity.</p>
+      </div>
+
+      <div class="legal-block">
+        <h2 data-i18n="tos_liab_title">Limitation of Liability</h2>
+        <p data-i18n="tos_liab_body">Rebelo serves as a platform connecting service providers with customers. We are not liable for disputes, losses, or damages arising from interactions between users of the platform.</p>
+      </div>
+
+      <div class="legal-block">
+        <h2 data-i18n="tos_changes_title">Changes to Terms</h2>
+        <p data-i18n="tos_changes_body">We reserve the right to modify these Terms at any time. Changes will be effective upon posting. Continued use of the platform after changes constitutes acceptance of the new Terms.</p>
+      </div>
+
+      <div class="legal-block">
+        <h2 data-i18n="tos_contact_title">Contact</h2>
+        <p data-i18n="tos_contact_body">For questions about these Terms, contact: support@rebelo.tn</p>
+      </div>
+
+      <div class="legal-block">
+        <h2 data-i18n="tos_law_title">Governing Law</h2>
+        <p data-i18n="tos_law_body">These Terms are governed by the laws of the Republic of Tunisia.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="nav-logo">
+          <span class="logo-dot"></span><span class="logo-r">R</span><span class="logo-rest">ebelo</span>
+        </div>
+        <p class="footer-tagline" data-i18n="footer_tagline">The Global Super-App for Food, Taxi &amp; Delivery.</p>
+      </div>
+      <div class="footer-links">
+        <a href="privacy-policy.html" data-i18n="f_link_privacy">Privacy Policy</a>
+        <a href="terms-of-service.html" data-i18n="f_link_terms">Terms of Service</a>
+        <a href="register-taxi.html" data-i18n="f_link_taxi">Taxi Drivers</a>
+        <a href="register-delivery.html" data-i18n="f_link_couriers">Couriers</a>
+        <a href="register-partner.html" data-i18n="f_link_partners">Partners</a>
+        <a href="mailto:support@rebelo.tn" data-i18n="f_link_contact">Contact Us</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="i18n.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>

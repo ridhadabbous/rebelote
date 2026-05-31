@@ -10,7 +10,8 @@
   </script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Partner with Rebelo | Store Registration</title>
+  <meta name="description" data-i18n="meta_desc_partner" content="Register your store with Rebelo. Reach thousands of new customers." />
+  <title data-i18n="page_title_partner">Partner with Rebelo | Store Registration</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
@@ -27,7 +28,7 @@
         <span class="logo-dot"></span><span class="logo-r">R</span><span class="logo-rest">ebelo</span>
       </a>
       <div class="nav-links">
-        <button id="lang-toggle" class="lang-toggle">🌐 EN | ع</button>
+        <button id="lang-toggle" class="lang-toggle"></button>
       </div>
     </div>
   </nav>
@@ -41,21 +42,21 @@
         
         <div class="premium-benefits">
           <div class="benefit-item">
-            <div class="benefit-icon">📈</div>
+            <div class="benefit-icon" aria-hidden="true">📈</div>
             <div class="benefit-text">
               <h4 data-i18n="rp_b1_t">Zero Commission</h4>
               <p data-i18n="rp_b1_d">Keep 100% of your menu prices. Customers pay couriers directly in cash.</p>
             </div>
           </div>
           <div class="benefit-item">
-            <div class="benefit-icon">🛵</div>
+            <div class="benefit-icon" aria-hidden="true">🛵</div>
             <div class="benefit-text">
               <h4 data-i18n="rp_b2_t">Delivery Solved</h4>
               <p data-i18n="rp_b2_d">We handle the delivery logistics for you. Orders are automatically assigned to nearby couriers.</p>
             </div>
           </div>
           <div class="benefit-item">
-            <div class="benefit-icon">💻</div>
+            <div class="benefit-icon" aria-hidden="true">💻</div>
             <div class="benefit-text">
               <h4 data-i18n="rp_b3_t">Easy Management</h4>
               <p data-i18n="rp_b3_d">A dedicated tablet app to manage your menu, accept orders, and track your business growth.</p>
@@ -71,29 +72,27 @@
       
       <div class="form-header">
         <h2 data-i18n="rp_form_title">Register your Store</h2>
-        <p data-i18n="rd_form_sub">Fill in your details to join the Rebelo program.</p>
+        <p data-i18n="rp_form_sub">Fill in your store details to partner with Rebelo.</p>
       </div>
 
       <form class="register-form" onsubmit="handleRegistration(event, 'Store Partner')">
         <div class="form-group">
           <label for="store_name" data-i18n="rp_store_name">Store Name</label>
-          <input type="text" id="store_name" name="store_name" required placeholder="My Awesome Restaurant">
+          <input type="text" id="store_name" name="store_name" required data-i18n-placeholder="placeholder_store_name" placeholder="My Awesome Restaurant">
         </div>
         <div class="form-group">
           <label for="name" data-i18n="form_name">Owner's Full Name</label>
-          <input type="text" id="name" name="name" required placeholder="John Doe">
+          <input type="text" id="name" name="name" required data-i18n-placeholder="placeholder_name" placeholder="John Doe">
         </div>
         <div class="form-group">
           <label for="email" data-i18n="form_email">Email Address</label>
-          <input type="email" id="email" name="email" required placeholder="hello@store.com">
+          <input type="email" id="email" name="email" required data-i18n-placeholder="placeholder_email" placeholder="hello@store.com">
         </div>
         <div class="form-group">
           <label for="phone" data-i18n="form_phone">Phone Number</label>
           <div class="phone-input-group">
-            <select id="country_code" name="country_code" class="country-select">
-              <option value="+216" selected>🇹🇳 +216</option>
-            </select>
-            <input type="tel" id="phone" name="phone" required placeholder="12 345 678" class="phone-number">
+            <select id="country_code" name="country_code" class="country-select"></select>
+            <input type="tel" id="phone" name="phone" required data-i18n-placeholder="placeholder_phone" placeholder="12 345 678" class="phone-number">
           </div>
         </div>
         
@@ -105,6 +104,13 @@
         
         <!-- Honeypot -->
         <input type="checkbox" name="botcheck" style="display:none" />
+
+        <div class="consent-group">
+          <label>
+            <input type="checkbox" name="consent" required />
+            <span data-i18n="form_consent">I agree to the <a href="privacy-policy.html">Privacy Policy</a> and <a href="terms-of-service.html">Terms of Service</a></span>
+          </label>
+        </div>
         
         <button type="submit" class="submit-btn" data-i18n="form_submit">Submit Registration</button>
         <div id="form-message" class="form-message"></div>

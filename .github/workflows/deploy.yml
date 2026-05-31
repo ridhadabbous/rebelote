@@ -49,6 +49,16 @@ jobs:
             echo "✅ Key injected successfully into main.js"
           fi
 
+      - name: Inject Registration Backend URL
+        run: |
+          sed -i 's|__REGISTRATION_BACKEND_URL__|${{ secrets.REGISTRATION_BACKEND_URL }}|g' register.js
+          if grep -q '__REGISTRATION_BACKEND_URL__' register.js; then
+            echo "❌ ERROR: Placeholder was NOT replaced in register.js!"
+            exit 1
+          else
+            echo "✅ Backend URL injected successfully into register.js"
+          fi
+
       - name: Setup Pages
         uses: actions/configure-pages@v5
 

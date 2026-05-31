@@ -11,7 +11,8 @@
   </script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Drive with Rebelo | Taxi Registration</title>
+  <meta name="description" data-i18n="meta_desc_taxi" content="Register as a taxi driver with Rebelo. Drive and earn cash in your city." />
+  <title data-i18n="page_title_taxi">Drive with Rebelo | Taxi Registration</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
@@ -29,7 +30,7 @@
         <span class="logo-dot"></span><span class="logo-r">R</span><span class="logo-rest">ebelo</span>
       </a>
       <div class="nav-links">
-        <button id="lang-toggle" class="lang-toggle">🌐 EN | ع</button>
+        <button id="lang-toggle" class="lang-toggle"></button>
       </div>
     </div>
   </nav>
@@ -45,7 +46,7 @@
 
         <div class="premium-benefits">
           <div class="benefit-item">
-            <div class="benefit-icon">💵</div>
+            <div class="benefit-icon" aria-hidden="true">💵</div>
             <div class="benefit-text">
               <h4 data-i18n="rt_b1_t">Cash Payments</h4>
               <p data-i18n="rt_b1_d">Passengers pay you directly in cash at the end of every trip. Instant, with no
@@ -53,7 +54,7 @@
             </div>
           </div>
           <div class="benefit-item">
-            <div class="benefit-icon">🕒</div>
+            <div class="benefit-icon" aria-hidden="true">🕒</div>
             <div class="benefit-text">
               <h4 data-i18n="rt_b2_t">Total Flexibility</h4>
               <p data-i18n="rt_b2_d">You are your own boss. Go online and offline instantly. Work when and where it
@@ -61,7 +62,7 @@
             </div>
           </div>
           <div class="benefit-item">
-            <div class="benefit-icon">📱</div>
+            <div class="benefit-icon" aria-hidden="true">📱</div>
             <div class="benefit-text">
               <h4 data-i18n="rt_b3_t">Smart Driver App</h4>
               <p data-i18n="rt_b3_d">A powerful, intuitive app to accept rides, navigate efficiently and manage your
@@ -78,25 +79,23 @@
 
       <div class="form-header">
         <h2 data-i18n="rt_form_title">Register as a Taxi Driver</h2>
-        <p data-i18n="rd_form_sub">Fill in your details to join the Rebelo program.</p>
+        <p data-i18n="rt_form_sub">Complete your details to join the Rebelo taxi network.</p>
       </div>
 
       <form class="register-form" onsubmit="handleRegistration(event, 'Taxi Driver')">
         <div class="form-group">
           <label for="name" data-i18n="form_name">Full Name</label>
-          <input type="text" id="name" name="name" required placeholder="John Doe">
+          <input type="text" id="name" name="name" required data-i18n-placeholder="placeholder_name" placeholder="John Doe">
         </div>
         <div class="form-group">
           <label for="email" data-i18n="form_email">Email Address</label>
-          <input type="email" id="email" name="email" required placeholder="john@example.com">
+          <input type="email" id="email" name="email" required data-i18n-placeholder="placeholder_email" placeholder="john@example.com">
         </div>
         <div class="form-group">
           <label for="phone" data-i18n="form_phone">Phone Number</label>
           <div class="phone-input-group">
-            <select id="country_code" name="country_code" class="country-select">
-              <option value="+216" selected>🇹🇳 +216</option>
-            </select>
-            <input type="tel" id="phone" name="phone" required placeholder="12 345 678" class="phone-number">
+            <select id="country_code" name="country_code" class="country-select"></select>
+            <input type="tel" id="phone" name="phone" required data-i18n-placeholder="placeholder_phone" placeholder="12 345 678" class="phone-number">
           </div>
         </div>
 
@@ -104,35 +103,18 @@
           <label for="city" data-i18n="rd_reg">Preferred Working Region</label>
           <select id="city" name="city" required>
             <option value="" disabled selected data-i18n="form_city_sel">Select your city...</option>
-            <option value="Tunis">Tunis</option>
-            <option value="Ariana">Ariana</option>
-            <option value="Ben Arous">Ben Arous</option>
-            <option value="Manouba">Manouba</option>
-            <option value="Nabeul">Nabeul</option>
-            <option value="Zaghouan">Zaghouan</option>
-            <option value="Bizerte">Bizerte</option>
-            <option value="Beja">Béja</option>
-            <option value="Jendouba">Jendouba</option>
-            <option value="Kef">Kef</option>
-            <option value="Siliana">Siliana</option>
-            <option value="Kairouan">Kairouan</option>
-            <option value="Kasserine">Kasserine</option>
-            <option value="Sidi Bouzid">Sidi Bouzid</option>
-            <option value="Sousse">Sousse</option>
-            <option value="Monastir">Monastir</option>
-            <option value="Mahdia">Mahdia</option>
-            <option value="Sfax">Sfax</option>
-            <option value="Gafsa">Gafsa</option>
-            <option value="Tozeur">Tozeur</option>
-            <option value="Kebili">Kebili</option>
-            <option value="Gabes">Gabès</option>
-            <option value="Medenine">Medenine</option>
-            <option value="Tataouine">Tataouine</option>
           </select>
         </div>
 
         <!-- Honeypot -->
         <input type="checkbox" name="botcheck" style="display:none" />
+
+        <div class="consent-group">
+          <label>
+            <input type="checkbox" name="consent" required />
+            <span data-i18n="form_consent">I agree to the <a href="privacy-policy.html">Privacy Policy</a> and <a href="terms-of-service.html">Terms of Service</a></span>
+          </label>
+        </div>
 
         <button type="submit" class="submit-btn" data-i18n="form_submit">Submit Registration</button>
         <div id="form-message" class="form-message"></div>

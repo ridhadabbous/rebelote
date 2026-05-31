@@ -1,5 +1,5 @@
 /* ===========================
-   ANIMATED BACKGROUND CANVAS
+   Animated background canvas
 =========================== */
 const canvas = document.getElementById('bg-canvas');
 const ctx = canvas ? canvas.getContext('2d') : null;
@@ -30,9 +30,12 @@ if (canvas && ctx) {
   }
 
   function drawParticles() {
+    if (document.hidden) {
+      animFrameId = requestAnimationFrame(drawParticles);
+      return;
+    }
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-    // Draw connection lines
     for (let i = 0; i < particles.length; i++) {
       for (let j = i + 1; j < particles.length; j++) {
         const dx = particles[i].x - particles[j].x;
@@ -50,7 +53,6 @@ if (canvas && ctx) {
       }
     }
 
-    // Draw particles
     for (const p of particles) {
       ctx.beginPath();
       ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
@@ -83,7 +85,7 @@ if (canvas && ctx) {
 
 
 /* ===========================
-   NAVBAR SCROLL EFFECT
+   Navbar scroll effect
 =========================== */
 const navbar = document.getElementById('navbar');
 window.addEventListener('scroll', () => {
@@ -94,7 +96,7 @@ window.addEventListener('scroll', () => {
   }
 }, { passive: true });
 
-/* === HAMBURGER MENU === */
+/* === Hamburger menu === */
 const hamburger = document.getElementById('nav-hamburger');
 const navMobile = document.getElementById('nav-mobile');
 if (hamburger && navMobile) {
@@ -105,26 +107,11 @@ if (hamburger && navMobile) {
 
 
 /* ===========================
-   INTERSECTION OBSERVER – REVEAL ANIMATIONS
+   Intersection observer – reveal animations
 =========================== */
 const revealTargets = document.querySelectorAll(
-  '.service-block, .timeline-item, .city-chip, .city-card-primary, .store-badge, .app-name-reveal'
+  '.service-block, .store-badge'
 );
-
-const revealStyles = `
-  .reveal-hidden {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
-  }
-  .reveal-visible {
-    opacity: 1 !important;
-    transform: translateY(0) !important;
-  }
-`;
-const styleEl = document.createElement('style');
-styleEl.textContent = revealStyles;
-document.head.appendChild(styleEl);
 
 revealTargets.forEach((el, i) => {
   el.classList.add('reveal-hidden');
@@ -143,109 +130,7 @@ const observer = new IntersectionObserver((entries) => {
 revealTargets.forEach(el => observer.observe(el));
 
 /* ===========================
-   HERO TITLE WORD ANIMATION
-=========================== */
-document.querySelectorAll('.app-title-word').forEach((word, i) => {
-  word.style.opacity = '0';
-  word.style.transform = 'translateY(20px)';
-  word.style.display = 'inline-block';
-  word.style.transition = `opacity 0.5s ease ${400 + i * 120}ms, transform 0.5s ease ${400 + i * 120}ms`;
-  setTimeout(() => {
-    word.style.opacity = '1';
-    word.style.transform = 'translateY(0)';
-  }, 100);
-});
-
-/* ===========================
-   PHONE CARD INTERACTIVITY
-=========================== */
-const cards = document.querySelectorAll('.service-card');
-const screenTitle = document.querySelector('.screen-title');
-const statusEl = document.querySelector('.screen-status span');
-
-const cardData = {
-  'card-food': { title: 'Order Food 🍔', status: 'Browsing 200+ restaurants near you' },
-  'card-taxi': { title: 'Book a Taxi 🚕', status: 'Finding drivers near you…' },
-  'card-ship': { title: 'Ship a Package 📦', status: 'Schedule a pickup instantly' },
-};
-
-cards.forEach(card => {
-  card.addEventListener('click', () => {
-    const data = cardData[card.id];
-    if (data && screenTitle && statusEl) {
-      screenTitle.textContent = data.title;
-      statusEl.textContent = data.status;
-      cards.forEach(c => c.style.outline = 'none');
-      card.style.outline = '2px solid rgba(229,57,53,0.6)';
-    }
-  });
-});
-
-/* ===========================
-   NOTIFY FORM
-   Uses Web3Forms (https://web3forms.com) free, no backend needed.
-   The key is injected at deploy time from a GitHub Actions secret.
-   To set it up:
-     1. Go to https://web3forms.com
-     2. Enter "support@rebelo.tn" → "Create Access Key"
-     3. In GitHub repo → Settings → Secrets → Actions → New secret
-        Name: WEB3FORMS_KEY  /  Value: (your key)
-=========================== */
-const WEB3FORMS_KEY = '__WEB3FORMS_KEY__';
-
-async function handleNotify(e) {
-  e.preventDefault();
-
-  const emailInput = document.getElementById('notify-email');
-  const successEl = document.getElementById('form-success');
-  const errorEl = document.getElementById('form-error');
-  const btn = e.target.querySelector('.btn-submit');
-  const email = emailInput.value.trim();
-
-  if (!email) return;
-
-  btn.innerHTML = '<span class="btn-text">Sending…</span>';
-  btn.disabled = true;
-  if (errorEl) errorEl.classList.remove('show');
-
-  try {
-    const res = await fetch('https://api.web3forms.com/submit', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-      body: JSON.stringify({
-        access_key: WEB3FORMS_KEY,
-        subject: '🔔 New Launch Notification Request Rebelote',
-        from_name: 'Rebelote Splash Page',
-        replyto: email,
-        message: `A visitor wants to be notified at launch.\n\nEmail: ${email}\nTime: ${new Date().toLocaleString('fr-TN', { timeZone: 'Africa/Tunis' })}\nPage: ${window.location.href}`,
-        botcheck: '',
-      }),
-    });
-
-    const data = await res.json();
-
-    if (data.success) {
-      emailInput.value = '';
-      successEl.classList.add('show');
-      btn.innerHTML = '<span class="btn-text">✓ You\'re on the list!</span>';
-      setTimeout(() => {
-        btn.innerHTML = '<span class="btn-text">Notify Me</span><span class="btn-icon">→</span>';
-        btn.disabled = false;
-        successEl.classList.remove('show');
-      }, 4000);
-    } else {
-      throw new Error(data.message || 'Submission failed');
-    }
-  } catch (err) {
-    console.error('[Rebelote] Form error:', err);
-    btn.innerHTML = '<span class="btn-text">Notify Me</span><span class="btn-icon">→</span>';
-    btn.disabled = false;
-    if (errorEl) errorEl.classList.add('show');
-  }
-}
-
-/* ===========================
-   SMOOTH ANCHOR SCROLLING
+   Smooth anchor scrolling
 =========================== */
 document.querySelectorAll('a[href^="#"]').forEach(link => {
   link.addEventListener('click', e => {
@@ -258,7 +143,7 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
 });
 
 /* ===========================
-   CURSOR GLOW EFFECT
+   Cursor glow effect
 =========================== */
 const glow = document.createElement('div');
 glow.style.cssText = `

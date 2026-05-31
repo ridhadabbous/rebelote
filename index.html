@@ -11,12 +11,12 @@
     </script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Rebelo Food, Taxi &amp; Delivery Super-App</title>
-    <meta name="description"
+    <title data-i18n="page_title_index">Rebelo Food, Taxi &amp; Delivery Super-App</title>
+    <meta name="description" data-i18n="meta_desc_index"
         content="Rebelo The global super-app for food delivery, taxi rides and parcel shipping. Join as a driver or partner today." />
     <meta name="keywords" content="Rebelo, super app, food delivery, taxi, shipping, driver, partner" />
-    <meta property="og:title" content="Rebelo The Global Super-App" />
-    <meta property="og:description" content="One app. Every service. Everywhere." />
+    <meta property="og:title" data-i18n="page_title_index" content="Rebelo Food, Taxi &amp; Delivery Super-App" />
+    <meta property="og:description" data-i18n="meta_desc_index" content="The global super-app for food delivery, taxi rides and parcel shipping." />
     <meta property="og:type" content="website" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -24,11 +24,10 @@
         href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap"
         rel="stylesheet" />
     <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="register.css" />
 </head>
 
 <body>
-    <canvas id="bg-canvas"></canvas>
+    <canvas id="bg-canvas" aria-hidden="true"></canvas>
 
     <!-- Navbar -->
     <nav class="navbar" id="navbar">
@@ -39,18 +38,18 @@
 
             <div class="nav-links" id="nav-links">
                 <a href="register-delivery.html" class="nav-link">
-                    <img src="icon_delivery_real.webp" alt="" class="nav-icon"> <span data-i18n="nav_courier">Become a
+                    <img src="icon_delivery_real.webp" alt="Courier icon" class="nav-icon"> <span data-i18n="nav_courier">Become a
                         Courier</span>
                 </a>
                 <a href="register-taxi.html" class="nav-link">
-                    <img src="icon_taxi_real.webp" alt="" class="nav-icon"> <span data-i18n="nav_driver">Drive with
+                    <img src="icon_taxi_real.webp" alt="Taxi icon" class="nav-icon"> <span data-i18n="nav_driver">Drive with
                         Us</span>
                 </a>
                 <a href="register-partner.html" class="nav-link nav-link-cta">
-                    <img src="icon_partner_real.webp" alt="" class="nav-icon"> <span data-i18n="nav_partner">Partner
+                    <img src="icon_partner_real.webp" alt="Partner icon" class="nav-icon"> <span data-i18n="nav_partner">Partner
                         with Us</span>
                 </a>
-                <button id="lang-toggle" class="lang-toggle">🌐 EN | ع</button>
+                <button id="lang-toggle" class="lang-toggle"></button>
             </div>
 
             <button class="nav-hamburger" id="nav-hamburger" aria-label="Toggle menu">
@@ -58,11 +57,11 @@
             </button>
         </div>
         <div class="nav-mobile" id="nav-mobile">
-            <a href="register-delivery.html"><img src="icon_delivery_real.webp" alt="" class="nav-icon"> <span
+            <a href="register-delivery.html"><img src="icon_delivery_real.webp" alt="Courier icon" class="nav-icon"> <span
                     data-i18n="nav_courier">Become a Courier</span></a>
-            <a href="register-taxi.html"><img src="icon_taxi_real.webp" alt="" class="nav-icon"> <span
+            <a href="register-taxi.html"><img src="icon_taxi_real.webp" alt="Taxi icon" class="nav-icon"> <span
                     data-i18n="nav_driver">Drive with Us</span></a>
-            <a href="register-partner.html"><img src="icon_partner_real.webp" alt="" class="nav-icon"> <span
+            <a href="register-partner.html"><img src="icon_partner_real.webp" alt="Partner icon" class="nav-icon"> <span
                     data-i18n="nav_partner">Partner with Us</span></a>
         </div>
     </nav>
@@ -159,10 +158,10 @@
 
             <div class="services-grid">
                 <div class="service-block" id="svc-partner">
-                    <div class="service-icon-wrap" style="--c1:#E53935;--c2:#FF5252">
-                        <img src="icon_partner_real.webp" alt="Partner" class="service-icon-img" loading="lazy">
+                    <div class="service-icon-wrap">
+                        <img src="icon_partner_real.webp" alt="Rebelo Partner App" class="service-icon-img" loading="lazy">
                     </div>
-                    <div class="service-tag" style="--c1:#E53935" data-i18n="eco_tag_partner">For Businesses</div>
+                    <div class="service-tag" data-i18n="eco_tag_partner">For Businesses</div>
                     <h3 data-i18n="eco_app_partner">Partner App</h3>
                     <p data-i18n="eco_desc_partner">Restaurants, grocery stores and retail shops. Manage your menu,
                         receive orders and reach thousands of new customers without worrying about delivery logistics.
@@ -172,10 +171,10 @@
                 </div>
 
                 <div class="service-block" id="svc-delivery">
-                    <div class="service-icon-wrap" style="--c1:#ffffff;--c2:#aaaaaa">
-                        <img src="icon_delivery_real.webp" alt="Delivery" class="service-icon-img" loading="lazy">
+                    <div class="service-icon-wrap">
+                        <img src="icon_delivery_real.webp" alt="Rebelo Delivery App" class="service-icon-img" loading="lazy">
                     </div>
-                    <div class="service-tag" style="--c1:#ffffff" data-i18n="eco_tag_courier">For Couriers</div>
+                    <div class="service-tag" data-i18n="eco_tag_courier">For Couriers</div>
                     <h3 data-i18n="eco_app_courier">Delivery App</h3>
                     <p data-i18n="eco_desc_courier">Accept delivery orders in your zone, navigate efficiently and
                         collect payment directly from customers in cash. Full control, zero middleman.</p>
@@ -184,10 +183,10 @@
                 </div>
 
                 <div class="service-block" id="svc-taxi">
-                    <div class="service-icon-wrap" style="--c1:#555555;--c2:#888888">
-                        <img src="icon_taxi_real.webp" alt="Taxi" class="service-icon-img" loading="lazy">
+                    <div class="service-icon-wrap">
+                        <img src="icon_taxi_real.webp" alt="Rebelo Taxi App" class="service-icon-img" loading="lazy">
                     </div>
-                    <div class="service-tag" style="--c1:#aaaaaa" data-i18n="eco_tag_taxi">For Drivers</div>
+                    <div class="service-tag" data-i18n="eco_tag_taxi">For Drivers</div>
                     <h3 data-i18n="eco_app_taxi">Taxi App</h3>
                     <p data-i18n="eco_desc_taxi">Go online in seconds and connect with passengers nearby. Riders pay you
                         directly in cash at the end of each trip no delays, no deductions.</p>
@@ -246,16 +245,14 @@
                 </p>
             </div>
             <div class="footer-links">
-                <a href="#services" data-i18n="f_link_services">Services</a>
-                <a href="#join" data-i18n="f_link_join">Get Started</a>
+                <a href="privacy-policy.html" data-i18n="f_link_privacy">Privacy Policy</a>
+                <a href="terms-of-service.html" data-i18n="f_link_terms">Terms of Service</a>
                 <a href="register-taxi.html" data-i18n="f_link_taxi">Taxi Drivers</a>
                 <a href="register-delivery.html" data-i18n="f_link_couriers">Couriers</a>
                 <a href="register-partner.html" data-i18n="f_link_partners">Partners</a>
                 <a href="mailto:support@rebelo.tn" data-i18n="f_link_contact">Contact Us</a>
             </div>
-            <div class="footer-bottom">
-                <p data-i18n="footer_copyright">© 2025 Rebelo · Developed by the MyPlace.tn team · All rights reserved</p>
-            </div>
+
         </div>
     </footer>
 
